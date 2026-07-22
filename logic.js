@@ -130,6 +130,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  document.querySelectorAll('.drawer').forEach(function (drawer) {
+    drawer.addEventListener('mouseenter', function () {
+      const smudge = document.createElement('div');
+      smudge.style.cssText = 'position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(139,111,71,0.12) 0%,transparent 70%);width:140px;height:140px;transform:translate(-50%,-50%);transition:opacity .5s;z-index:0;';
+      drawer.style.position = 'relative';
+      drawer.appendChild(smudge);
+      drawer.addEventListener('mousemove', function (e) {
+        const rect = drawer.getBoundingClientRect();
+        smudge.style.left = (e.clientX - rect.left) + 'px';
+        smudge.style.top = (e.clientY - rect.top) + 'px';
+      });
+      drawer.addEventListener('mouseleave', function () {
+        smudge.style.opacity = '0';
+        setTimeout(function () { if (smudge.parentNode) smudge.parentNode.removeChild(smudge); }, 500);
+      }, { once: true });
+    });
+  });
+
   
 
 });
