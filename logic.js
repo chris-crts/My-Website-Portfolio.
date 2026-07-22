@@ -165,6 +165,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  applyFlip();
 
+  window.addEventListener('resize', applyFlip);
 
 });
