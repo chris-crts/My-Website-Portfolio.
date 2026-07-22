@@ -155,6 +155,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  
+  function applyFlip() {
+    document.querySelectorAll('.case-file').forEach(function (card, i) {
+      if (window.innerWidth > 768) {
+        card.classList.toggle('cf-flip', i % 2 === 1);
+      } else {
+        card.classList.remove('cf-flip');
+      }
+    });
+  }
+
+
 
 });
