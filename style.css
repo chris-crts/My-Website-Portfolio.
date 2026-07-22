@@ -1998,5 +1998,19 @@ a {
     text-align: center;
   }
 
+  .section-title {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+  }
 
+  .corr-row {
+    grid-template-columns: 20px 1fr;
+  }
+
+  .corr-method {
+    display: none;
+  }
+
+  .masthead-title {
+    font-size: clamp(1.2rem, 6vw, 1.8rem);
+  }
 }
