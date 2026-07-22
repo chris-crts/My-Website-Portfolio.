@@ -1982,5 +1982,21 @@ a {
     gap: 1rem;
   }
 
+  .cf-category {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    transform: none;
+    margin-top: 0;
+  }
+
+  .fp-ctas {
+    flex-direction: column;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    text-align: center;
+  }
+
 
 }
