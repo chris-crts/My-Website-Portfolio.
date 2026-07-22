@@ -1966,3 +1966,21 @@ a {
     right: 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .front-page {
+    padding: 6rem 1rem 2rem;
+  }
+
+  .case-file {
+    grid-template-columns: 1fr;
+  }
+
+  .cf-sidebar {
+    flex-direction: row;
+    padding: 0.8rem 1rem;
+    gap: 1rem;
+  }
+
+
+}
