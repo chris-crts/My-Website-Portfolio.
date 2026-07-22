@@ -148,6 +148,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (mediaQuery.matches) {
+    document.querySelectorAll('.reveal-up').forEach(function (el) {
+      el.classList.add('visible');
+    });
+  }
+
   
 
 });
