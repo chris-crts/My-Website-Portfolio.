@@ -1,4 +1,3 @@
-My Portfolio
 A showcase of my work as a BS Computer Science graduate and freelance web developer. This portfolio demonstrates my ability to build responsive, maintainable, and secure web applications using modern technologies.
 
 Light & Dark Mode:
