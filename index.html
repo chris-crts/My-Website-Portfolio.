@@ -45,889 +45,1147 @@
 
   <div class="site-wrap" id="siteWrap">
 
-    <header class="site-header" id="siteHeader">
-      <div class="header-inner">
-        <a href="#front-page" class="header-logo">
-          <span class="logo-monogram">CC</span>
-          <div class="logo-text">
-            <span class="logo-title">The Drafting Room</span>
-            <span class="logo-sub">Portfolio Archive &mdash; MMXXVI</span>
+    <div class="app-shell" id="appShell">
+
+      <!-- ============================= -->
+      <!-- DESKTOP SIDEBAR                -->
+      <!-- ============================= -->
+      <aside class="app-sidebar" aria-label="Primary navigation">
+
+        <div class="sidebar-brand">
+          <span class="sidebar-brand-mark">CC</span>
+          <div class="sidebar-brand-text">
+            <span class="sidebar-brand-title">The Drafting Room</span>
+            <span class="sidebar-brand-sub">Archive &mdash; MMXXVI</span>
           </div>
-        </a>
-        <nav class="header-nav" id="headerNav">
-          <a href="#front-page">Front Page</a>
-          <a href="#workshop">Workshop</a>
-          <a href="#blueprint-archive">Blueprint Archive</a>
-          <a href="#case-files">Case Files</a>
-          <a href="#correspondence">Correspondence</a>
+          <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" type="button" aria-label="Collapse sidebar">
+            &#8592;
+          </button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <span class="sidebar-ref">&sect; NAVIGATION</span>
+
+          <button class="nav-item" type="button" data-view="front-page" aria-label="About Me">
+            <span class="nav-item-mark">AB</span>
+            <span class="nav-item-label">About Me</span>
+          </button>
+
+          <button class="nav-item" type="button" data-view="workshop" aria-label="Workshop">
+            <span class="nav-item-mark">WS</span>
+            <span class="nav-item-label">Workshop</span>
+          </button>
+
+          <button class="nav-item" type="button" data-view="blueprint-archive" aria-label="Blueprint Archive">
+            <span class="nav-item-mark">BA</span>
+            <span class="nav-item-label">Blueprint Archive</span>
+          </button>
+
+          <button class="nav-item" type="button" data-view="case-files" aria-label="Professional Dossier">
+            <span class="nav-item-mark">CV</span>
+            <span class="nav-item-label">Dossier</span>
+          </button>
+
+          <button class="nav-item" type="button" data-view="correspondence" aria-label="Correspondence">
+            <span class="nav-item-mark">CO</span>
+            <span class="nav-item-label">Correspondence</span>
+          </button>
         </nav>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
+
+        <div class="sidebar-footer">
+          <div class="sidebar-status">
+            <span class="sidebar-status-dot" aria-hidden="true"></span>
+            <span>Open to Commissions</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ============================= -->
+      <!-- MOBILE / TABLET TOP BAR        -->
+      <!-- ============================= -->
+      <header class="app-topbar" id="appTopbar">
+        <div class="topbar-brand">
+          <span class="topbar-mark">CC</span>
+          <span class="topbar-view-title" id="topbarViewTitle">Front Page</span>
+        </div>
+      </header>
+
+      <!-- ============================= -->
+      <!-- MAIN CONTENT                   -->
+      <!-- ============================= -->
+      <main class="app-main" id="appMain">
+
+        <section class="app-view front-page" id="front-page">
+          <div class="fp-inner">
+
+            <div class="fp-masthead">
+              <div class="masthead-top">
+                <span class="masthead-vol">Vol. III &mdash; No. 2026</span>
+                <span class="masthead-title">THE DRAFTING ROOM</span>
+                <span class="masthead-date">Est. 2021 &mdash; Masbate City, Philippines</span>
+              </div>
+              <div class="masthead-rule-double">
+                <div class="mr-thick"></div>
+                <div class="mr-thin"></div>
+              </div>
+              <div class="masthead-kicker">Portfolio of Christopher Cortes &mdash; Full-Stack Developer &amp; Digital
+                Craftsman</div>
+              <div class="masthead-rule-single"></div>
+            </div>
+
+            <div class="fp-body-grid">
+
+              <div class="fp-col-left">
+                <div class="fp-id-card">
+                  <div class="fp-id-label">IDENTIFICATION / DOSSIER</div>
+                  <div class="portrait-frame">
+                    <img src="./media/me11.png" alt="Christopher Cortes" class="portrait-img">
+                    <div class="portrait-wash"></div>
+                    <div class="portrait-corner tl"></div>
+                    <div class="portrait-corner tr"></div>
+                    <div class="portrait-corner bl"></div>
+                    <div class="portrait-corner br"></div>
+                  </div>
+                  <div class="fp-id-details">
+                    <div class="fp-id-name">Christopher Cortes</div>
+                    <div class="fp-id-role">Full-Stack Developer</div>
+                    <div class="fp-id-ref">FILE NO. CC-2026-01</div>
+                  </div>
+                  <div class="fp-socials">
+                    <p id="lets_connect">Connect With Me:</p>
+                    <div class="specialDiv">
+                      <a href="https://github.com/chris-crts" target="_blank" class="social-stamp" title="GitHub">GH</a>
+                      <a href="https://www.linkedin.com/in/christopher-cortes-a0021a28b/" target="_blank"
+                        class="social-stamp" title="LinkedIn">LI</a>
+                      <a href="https://www.facebook.com/chris.sssss.11" target="_blank" class="social-stamp"
+                        title="Facebook">FB</a>
+                      <a href="https://www.instagram.com/mr.chris_crts?" target="_blank"
+                        class="social-stamp" title="Instagram">IG</a>
+                      <a href="mailto:11corteschristopher@gmail.com" class="social-stamp" title="Email">&#9993;</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="fp-sidebar-note">
+                  <div class="note-label">EDITOR'S ANNOTATION</div>
+                  <p class="note-text">Open to freelance commissions, collaborations, and custom builds. Operates out of
+                    Masbate City.</p>
+                  <div class="note-rule"></div>
+                  <span class="note-stamp">AVAILABLE</span>
+                </div>
+              </div>
+
+              <div class="fp-col-main">
+                <div class="fp-headline-block">
+                  <div class="fp-eyebrow">ABOUT &mdash; DEVELOPER PROFILE</div>
+                  <h1 class="fp-headline">
+                    <em>I Build Things</em><br>
+                    That Work.
+                  </h1>
+                  <div class="fp-subheadline">Full-Stack Applications &middot; AI-Integrated Systems &middot; Civic &amp;
+                    Healthcare Technology</div>
+                </div>
+
+                <div class="fp-lede-col">
+                  <p class="fp-lede"><span class="dropcap">I</span> am a passionate developer with hands-on experience
+                    building scalable web and mobile applications through academic projects, freelance commissions, and
+                    personal initiatives. Skilled in modern technologies and best practices — turning complex problems into
+                    elegant, working solutions.</p>
+                  <p class="fp-lede">My work spans healthcare management systems, social platforms, AI-powered tools, and
+                    invoicing software. Each project is driven by curiosity and a desire to make
+                    technology feel intuitive and engaging.</p>
+                </div>
+
+                <div class="fp-ledger">
+                  <div class="fp-ledger-item">
+                    <span class="ledger-num" data-target="5">0</span><span class="ledger-plus">+</span>
+                    <span class="ledger-label">Projects<br>Completed</span>
+                  </div>
+                  <div class="ledger-divider"></div>
+                  <div class="fp-ledger-item">
+                    <span class="ledger-num" data-target="3">0</span><span class="ledger-plus">+</span>
+                    <span class="ledger-label">Years<br>Experience</span>
+                  </div>
+                  <div class="ledger-divider"></div>
+                  <div class="fp-ledger-item">
+                    <span class="ledger-num" data-target="10">0</span><span class="ledger-plus">+</span>
+                    <span class="ledger-label">Technologies<br>Mastered</span>
+                  </div>
+                </div>
+
+                <div class="fp-ctas">
+                  <a href="#blueprint-archive" class="cta-primary">View Blueprint Archive</a>
+                  <a href="#correspondence" class="cta-secondary">Open Correspondence</a>
+                </div>
+              </div>
+
+              <div class="fp-col-right">
+                <div class="fp-right-box">
+                  <div class="box-header">AT A GLANCE</div>
+                  <ul class="glance-list">
+                    <li><span class="gl-key">Specialty</span><span class="gl-val">Full-Stack Dev</span></li>
+                    <li><span class="gl-key">Language</span><span class="gl-val">Python (Primary)</span></li>
+                    <li><span class="gl-key">Location</span><span class="gl-val">Masbate City, PH</span></li>
+                    <li><span class="gl-key">Status</span><span class="gl-val">Open to Work</span></li>
+                  </ul>
+                </div>
+                <div class="fp-right-box fp-right-box--accent">
+                  <div class="box-header">RECENT WORK</div>
+                  <p class="right-box-note">E-Invoicing &amp; Verification System — 4th Year Capstone. QR-verified audit
+                    trail for non-VAT transactions.</p>
+                  <a href="#blueprint-archive" class="box-link">Open Blueprint &rarr;</a>
+                </div>
+                <div class="fp-coffee-mark" aria-hidden="true"></div>
+              </div>
+
+            </div>
+
+            <div class="fp-footer-strip">
+              <span>THE DRAFTING ROOM &mdash; CHRISTOPHER CORTES</span>
+              <span class="fp-page-num">PAGE 01 OF 05</span>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="app-view doc-section" id="workshop">
+          <div class="section-fold-corner" aria-hidden="true"></div>
+          <div class="doc-section-inner">
+
+            <div class="section-header">
+              <div class="sec-eyebrow">
+                <span class="sec-ref">&sect; I</span>
+                <div class="sec-rule"></div>
+                <span class="sec-tag">WORKSHOP &amp; TOOLBOX</span>
+              </div>
+              <h2 class="section-title">Technical<br><em>Instruments</em></h2>
+              <div class="section-underrule"></div>
+              <p class="section-deck">The tools, languages, and frameworks that stock the workshop drawers.</p>
+            </div>
+
+            <div class="workshop-grid">
+
+              <div class="drawer reveal-up">
+                <div class="drawer-tab">Drawer 01</div>
+                <div class="drawer-label">FRONTEND INSTRUMENTS</div>
+                <div class="drawer-contents">
+                  <span class="tool-tag">React &amp; React-Native</span>
+                  <span class="tool-tag">HTML</span>
+                  <span class="tool-tag">CSS</span>
+                  <span class="tool-tag">Tailwind CSS</span>
+                  <span class="tool-tag">Bootstrap</span>
+                  <span class="tool-tag">JavaScript</span>
+                </div>
+              </div>
+
+              <div class="drawer reveal-up">
+                <div class="drawer-tab">Drawer 02</div>
+                <div class="drawer-label">BACKEND INSTRUMENTS</div>
+                <div class="drawer-contents">
+                  <span class="tool-tag">Django</span>
+                  <span class="tool-tag">PostgreSQL</span>
+                  <span class="tool-tag">RESTful API</span>
+                </div>
+              </div>
+
+              <div class="drawer reveal-up">
+                <div class="drawer-tab">Drawer 03</div>
+                <div class="drawer-label">NETWORKING FUNDAMENTALS - Currently Learning</div>
+
+                <div class="drawer-contents">
+                  <span class="tool-tag">Cisco Packet Tracer</span>
+                  <span class="tool-tag">VLAN Configuration</span>
+                  <span class="tool-tag">Basic Routing</span>
+                  <span class="tool-tag">Basic Switching</span>
+                  <span class="tool-tag">Network Simulation</span>
+                </div>
+              </div>
+
+              <div class="drawer reveal-up">
+                <div class="drawer-tab">Drawer 04</div>
+                <div class="drawer-label">CYBERSECURITY TOOLS</div>
+                <div class="drawer-contents">
+                  <span class="tool-tag">Wireshark</span>
+                  <span class="tool-tag">Metasploit</span>
+                  <span class="tool-tag">Burp Suite</span>
+                  <span class="tool-tag">GoBuster / Nikto / SQLMap</span>
+                  <span class="tool-tag">Hydra / John / Hashcat</span>
+                  <span class="tool-tag">Nmap / Nessus</span>
+                  <span class="tool-tag">Radare2 / Ghidra</span>
+                </div>
+              </div>
+
+              <div class="drawer reveal-up">
+                <div class="drawer-tab">Drawer 05</div>
+                <div class="drawer-label">DESIGN &amp; AUXILIARY TOOLS</div>
+                <div class="drawer-contents">
+                  <span class="tool-tag">Git & Github</span>
+                  <span class="tool-tag">Canva</span>
+                  <span class="tool-tag">Photoshop</span>
+                  <span class="tool-tag">AutoCAD</span>
+                  <span class="tool-tag">MS Office</span>
+                  <span class="tool-tag">Blender</span>
+                </div>
+              </div>
+
+              <div class="drawer drawer--featured reveal-up">
+                <div class="drawer-tab">Primary</div>
+                <div class="drawer-label">PRINCIPAL INSTRUMENT</div>
+                <div class="featured-instrument">
+                  <div class="instrument-name">Python</div>
+                  <div class="instrument-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                  <p class="instrument-note">The primary language of the workshop. Used across all backend systems,
+                    automation, and AI integrations.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="section-footer-strip">
+              <span>CHRISTOPHER CORTES &mdash; WORKSHOP / TOOLBOX</span>
+              <span class="page-ref">PAGE 02 OF 05</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-view doc-section doc-section--dark" id="blueprint-archive">
+          <div class="section-fold-corner section-fold-corner--light" aria-hidden="true"></div>
+          <div class="doc-section-inner">
+
+            <div class="section-header section-header--dark">
+              <div class="sec-eyebrow sec-eyebrow--light">
+                <span class="sec-ref">&sect; II</span>
+                <div class="sec-rule"></div>
+                <span class="sec-tag">BLUEPRINT ARCHIVE</span>
+              </div>
+              <h2 class="section-title section-title--light">Featured<br><em>Case Files</em></h2>
+              <div class="section-underrule"></div>
+              <p class="section-deck section-deck--light">Engineering-Style documentation for selected builds. Each file
+                contains
+                objectives, solutions, and technical specifications.</p>
+            </div>
+
+            <div class="case-files-list">
+              <article class="case-file case-file--featured reveal-up">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">
+                    CASE FILE <span class="cf-file-num-new">NEW</span>
+                  </div>
+
+                  <div class="cf-status cf-status--completed">
+                    COMPLETED
+                  </div>
+
+                  <div class="cf-category">
+                    Security Investigation Platform
+                  </div>
+                </div>
+
+                <div class="cf-img-col">
+                  <div class="cf-img-frame cf-carousel" data-carousel="traceforge">
+
+                    <div class="cf-carousel-track">
+
+                      <div class="cf-carousel-slide is-active">
+                        <img src="./media/workspace/login.png" alt="TraceForge Security Investigation Dashboard">
+                      </div>
+                      <div class="cf-carousel-slide">
+                        <img src="./media/workspace/main_dash_light.png" alt="TraceForge Agent Mission Workspace">
+                      </div>
+                      <div class="cf-carousel-slide">
+                        <img src="./media/workspace/main_dash_dark.png" alt="TraceForge AI Security Chat">
+                      </div>
+                      <div class="cf-carousel-slide">
+                        <img src="./media/workspace/workspace_engagement_light.png" alt="TraceForge Security Findings and Evidence">
+                      </div>
+                      <div class="cf-carousel-slide">
+                        <img src="./media/workspace/workspace_engagement_dark.png" alt="TraceForge Reconnaissance and Attack Surface Discovery">
+                      </div>
+                      <div class="cf-carousel-slide">
+                        <img src="./media/workspace/byok_feature.png" alt="TraceForge Investigation Checklist and Methodology">
+                      </div>
+                      <div class="cf-carousel-slide">
+                        <img src="./media/workspace/ai_agent_recon.png" alt="TraceForge Evidence and Security Reporting">
+                      </div>
+
+                    </div>
+
+                    <div class="cf-img-overlay"></div>
+
+                    <button class="cf-carousel-btn cf-carousel-btn--prev" type="button" aria-label="Previous TraceForge screenshot" data-carousel-prev="traceforge">&#8592;</button>
+                    <button class="cf-carousel-btn cf-carousel-btn--next" type="button" aria-label="Next TraceForge screenshot" data-carousel-next="traceforge">&#8594;</button>
+
+                    <div class="cf-carousel-dots" aria-label="TraceForge screenshots">
+                      <button class="is-active" type="button" data-carousel-dot="traceforge" data-slide="0" aria-label="Screenshot 1"></button>
+                      <button type="button" data-carousel-dot="traceforge" data-slide="1" aria-label="Screenshot 2"></button>
+                      <button type="button" data-carousel-dot="traceforge" data-slide="2" aria-label="Screenshot 3"></button>
+                      <button type="button" data-carousel-dot="traceforge" data-slide="3" aria-label="Screenshot 4"></button>
+                      <button type="button" data-carousel-dot="traceforge" data-slide="4" aria-label="Screenshot 5"></button>
+                      <button type="button" data-carousel-dot="traceforge" data-slide="5" aria-label="Screenshot 6"></button>
+                      <button type="button" data-carousel-dot="traceforge" data-slide="6" aria-label="Screenshot 7"></button>
+                    </div>
+
+                    <div class="cf-carousel-counter">
+                      <span data-carousel-current="traceforge">01</span>
+                      <span>/</span>
+                      <span>07</span>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="cf-body">
+
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">
+                      TraceForge
+                      <span style="opacity:.55;">(Security Investigation Platform)</span>
+                    </h3>
+
+                    <p class="cf-subtitle">
+                      Discover the surface · Trace the path · Prove the weakness.
+                    </p>
+                  </div>
+
+                  <div class="cf-field-grid">
+
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">
+                        A single workspace for security testers to recon, investigate, and prove vulnerabilities — end to end.
+                      </span>
+                    </div>
+
+                    <div class="cf-field">
+                      <span class="cf-field-label">SOLUTION</span>
+                      <span class="cf-field-val">
+                        An evidence-first workflow: investigate targets, run controlled AI agent missions, and generate a traceable report from discovery to findings.
+                      </span>
+                    </div>
+
+                  </div>
+
+                  <div class="cf-feature-section">
+
+                    <span class="cf-field-label">CORE CAPABILITIES</span>
+
+                    <div class="cf-feature-grid">
+                      <span>AI Security Chat</span>
+                      <span>Agent Missions</span>
+                      <span>Human Approval Gates</span>
+                      <span>Attack-Surface Discovery</span>
+                      <span>Evidence Collection</span>
+                      <span>Audit Trail & Reporting</span>
+                    </div>
+
+                  </div>
+
+                  <div class="cf-field-grid">
+
+                    <div class="cf-field">
+                      <span class="cf-field-label">AI-ASSISTED INVESTIGATION</span>
+                      <span class="cf-field-val">
+                        AI helps interpret recon data and suggest next steps — humans stay in control of every action.
+                      </span>
+                    </div>
+
+                    <div class="cf-field">
+                      <span class="cf-field-label">BRING YOUR OWN KEY</span>
+                      <span class="cf-field-val">
+                        Connect your own AI provider for full control over model choice, cost, and privacy.
+                      </span>
+                    </div>
+
+                  </div>
+
+                  <div class="cf-field-grid">
+
+                    <div class="cf-field">
+                      <span class="cf-field-label">AI AGENT MISSIONS</span>
+                      <span class="cf-field-val">
+                        Set a goal, scope it, review the plan, approve it — then watch the agent execute and collect evidence.
+                      </span>
+                    </div>
+
+                    <div class="cf-field">
+                      <span class="cf-field-label">CONTROLLED EXECUTION</span>
+                      <span class="cf-field-val">
+                        Every action is scoped, limited, logged, and requires human sign-off — no unrestricted autonomy.
+                      </span>
+                    </div>
+
+                  </div>
+
+                  <div class="cf-workflow">
+
+                    <span class="cf-field-label">INVESTIGATION WORKFLOW</span>
+
+                    <div class="cf-workflow-line">
+                      <span>Recon</span>
+                      <span>→</span>
+                      <span>Discover</span>
+                      <span>→</span>
+                      <span>Investigate</span>
+                      <span>→</span>
+                      <span>Verify</span>
+                      <span>→</span>
+                      <span>Report</span>
+                    </div>
+
+                  </div>
+
+                  <div class="cf-tech-strip">
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>PostgreSQL</span>
+                    <span>JavaScript</span>
+                    <span>LLM Integration</span>
+                  </div>
+
+                  <div class="cf-actions">
+
+                    <a class="cf-action-link cf-action-link--live" href="#" target="_blank" rel="noopener noreferrer" >
+                      View Repository &rarr;
+                    </a>
+
+                    <a href="#" class="cf-action-link">
+                      View Case Study &rarr;
+                    </a>
+
+                  </div>
+
+                </div>
+              </article>
+            </div>
+
+            <div class="case-files-list">
+              <article class="case-file reveal-up">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>01</span></div>
+                  <div class="cf-status cf-status--completed">COMPLETED</div>
+                  <div class="cf-category">Security Project</div>
+                </div>
+                <div class="cf-img-col">
+                  <div class="cf-img-frame">
+                    <img src="./media/soc_sys.png" alt="Netwatch SOC System Dashboard">
+                    <div class="cf-img-overlay"></div>
+                  </div>
+                </div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">Netwatch SOC System</h3>
+                    <p class="cf-subtitle">LAN-Based Security · Real-Time Monitoring · Proactive Defense</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">
+                        Build a LAN-based Security Operations Center (SOC) system to safeguard local networks, enumerate
+                        connected devices, and detect malicious activities such as Nmap scans, port probing, and suspicious
+                        downloads.
+                      </span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">SOLUTION</span>
+                      <span class="cf-field-val">
+                        A responsive backend-driven SOC application with port mirroring support, IDS/IPS integration, and
+                        structured logging. It classifies scan attempts (PORT_SCAN, SCAN_PROBE, OS_PROBE, SERVICE_PROBE,
+                        VULN_PROBE) and records attacker IP, target IP, and traffic details for incident response.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span>Python / Django</span>
+                    <span>HTML / CSS / JavaScript</span>
+                    <span>IDS/IPS Integration</span>
+                    <span>Port Mirroring</span>
+                  </div>
+                  <div class="cf-actions">
+                    <a class="cf-action-link cf-action-link--live" href="https://github.com/chris-crts/Netwatch-SOC" target="_blank"
+                      >
+                      View Repository &rarr;
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+
+            <div class="case-files-list">
+
+              <article class="case-file reveal-up">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>02</span></div>
+                  <div class="cf-status cf-status--active">COMPLETED</div>
+                  <div class="cf-category">HealthTech • AI</div>
+                </div>
+
+                <div class="cf-img-col">
+                  <div class="cf-img-frame">
+                    <img src="./media/ClinicSys.jpg" alt="AI Clinical Management System">
+                    <div class="cf-img-overlay"></div>
+                  </div>
+                </div>
+
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">AI-Powered Clinical Management System</h3>
+                    <p class="cf-subtitle">
+                      Semantic Search · RAG Chatbot · Medicine Recommendation · Electronic Health Records
+                    </p>
+                  </div>
+
+                  <div class="cf-field-grid">
+
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">
+                        Developed an intelligent clinical management system that streamlines appointment
+                        scheduling, electronic health records, and medicine inventory while assisting
+                        healthcare professionals through AI-powered semantic retrieval and contextual
+                        clinical decision support.
+                      </span>
+                    </div>
+
+                    <div class="cf-field">
+                      <span class="cf-field-label">SEMANTIC AI ENGINE</span>
+                      <span class="cf-field-val">
+                        Leveraged BioBERT to transform patient symptoms, medical history, and medicine
+                        knowledge into semantic vector embeddings. Indexed embeddings using Annoy
+                        (Approximate Nearest Neighbor) to enable high-speed similarity search,
+                        context-aware medicine retrieval, and explainable recommendation scoring.
+                      </span>
+                    </div>
+
+                    <div class="cf-field">
+                      <span class="cf-field-label">RAG MEDICAL ASSISTANT</span>
+                      <span class="cf-field-val">
+                        Designed a Retrieval-Augmented Generation (RAG) chatbot that combines semantic
+                        retrieval with BioGPT to answer patient-specific medical questions, explain
+                        medicine recommendations, summarize health records, and generate contextual
+                        responses using retrieved clinical information instead of relying solely on a
+                        language model.
+                      </span>
+                    </div>
+
+                  </div>
+
+                  <div class="cf-tech-strip">
+                    <span>Django</span>
+                    <span>Python</span>
+                    <span>PostgreSQL</span>
+                    <span>BioBERT</span>
+                    <span>BioGPT</span>
+                    <span>Semantic Embeddings</span>
+                    <span>Annoy Index</span>
+                    <span>RAG</span>
+                    <span>Vector Search</span>
+                    <span>REST API</span>
+                    <span>RBAC</span>
+                    <span>HTML / CSS / JS</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="case-file reveal-up">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>03</span></div>
+                  <div class="cf-status cf-status--active">LIVE</div>
+                  <div class="cf-category">4th Year Capstone</div>
+                </div>
+                <div class="cf-img-col">
+                  <div class="cf-img-frame">
+                    <img src="./media/invoicing.png" alt="E-Invoicing System">
+                    <div class="cf-img-overlay"></div>
+                  </div>
+                </div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">E-Invoicing &amp; Verification System</h3>
+                    <p class="cf-subtitle">Invoice Creation &middot; QR Verification &middot; Immutable Records</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Generate, share, negotiate, and finalize professional invoices for non-VAT
+                        transactions without registration.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">SOLUTION</span>
+                      <span class="cf-field-val">QR code verification backed by a tamper-evident audit trail and built-in
+                        encryption logic.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span>HTML / CSS / JS</span><span>Django</span><span>RESTful API</span>
+                    <span>PostgreSQL</span><span>reportlab</span><span>Built-in Encryption</span>
+                  </div>
+                  <div class="cf-actions">
+                    <a class="cf-action-link cf-action-link--live" href="https://nontaxinvoiceproof.pythonanywhere.com/" target="_blank"
+                      >Try It
+                      Now
+                      &rarr;</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="case-file reveal-up">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>04</span></div>
+                  <div class="cf-status cf-status--active">LIVE</div>
+                  <div class="cf-category">Promotional Project</div>
+                </div>
+                <div class="cf-img-col">
+                  <div class="cf-img-frame">
+                    <img src="./media/beaupro.png" alt="BeaPro Beauty Studio Website Concept">
+                    <div class="cf-img-overlay"></div>
+                  </div>
+                </div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">BeaPro Beauty Studio Website Concept</h3>
+                    <p class="cf-subtitle">Cinematic Landing · Interactive Showcases · Luxury-Inspired Design</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">
+                        Create a modern, editorial-style promotional website concept for BeaPro Beauty Studio, highlighting
+                        elegance, quality, and immersive digital experiences.
+                      </span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">SOLUTION</span>
+                      <span class="cf-field-val">
+                        A responsive web design featuring modern visuals to promote BeauPro - Beauty Studio.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span>HTML / CSS / JavaScript</span>
+                    <span>Netlify Deployment</span>
+                  </div>
+                  <div class="cf-actions">
+                    <a class="cf-action-link cf-action-link--live" href="https://beaupro-studio-masbate.netlify.app/" target="_blank"
+                      >
+                      View Live Demo &rarr;
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="case-file reveal-up">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>05</span></div>
+                  <div class="cf-status cf-status--active">LIVE</div>
+                  <div class="cf-category">Promotional Project</div>
+                </div>
+                <div class="cf-img-col">
+                  <div class="cf-img-frame">
+                    <img src="./media/rolex.png" alt="Rolex Luxury Collection Showcase">
+                    <div class="cf-img-overlay"></div>
+                  </div>
+                </div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">Rolex Luxury Collection</h3>
+                    <p class="cf-subtitle">Submariner · Daytona · GMT‑Master II</p>
+                  </div>
+
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">SUBMARINER</span>
+                      <span class="cf-field-val">
+                        $10,100 · Prestige 90% · Investment 85% · Craftsmanship 88% · Heritage 95%
+                        Timeless sports watch emphasizing water resistance, Oyster case design, and enduring prestige.
+                      </span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">DAYTONA</span>
+                      <span class="cf-field-val">
+                        $14,550 · Prestige 97% · Investment 98% · Craftsmanship 92% · Heritage 88%
+                        Iconic racing chronograph with Caliber 4130 movement, motorsport heritage, and unrivaled investment
+                        value.
+                      </span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">GMT‑MASTER II</span>
+                      <span class="cf-field-val">
+                        $10,700 · Prestige 92% · Investment 90% · Craftsmanship 88% · Heritage 92%
+                        Traveler's watch with dual‑time functionality, red‑blue "Pepsi" bezel, and Caliber 3285 movement.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="cf-tech-strip">
+                    <span>HTML / CSS / JavaScript</span>
+                    <span>Netlify Deployment</span>
+                  </div>
+
+                  <div class="cf-actions">
+                    <a class="cf-action-link cf-action-link--live" href="https://rolex-showcase.netlify.app/" target="_blank"
+                      >
+                      View Live Demo &rarr;
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+
+              <article class="case-file reveal-up">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>06</span></div>
+                  <div class="cf-status cf-status--active">LIVE</div>
+                  <div class="cf-category">Web Dev.</div>
+                </div>
+                <div class="cf-img-col">
+                  <div class="cf-img-frame">
+                    <img src="./media/oc.jpg" alt="School Webpage">
+                    <div class="cf-img-overlay"></div>
+                  </div>
+                </div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">School Documentary Webpage</h3>
+                    <p class="cf-subtitle">Promotional &amp; Informational Platform</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Showcase academic programs, institutional values, and legacy of Osmena
+                        Colleges.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">APPROACH</span>
+                      <span class="cf-field-val">Pure HTML, CSS, and JavaScript for maximum performance with no
+                        dependencies.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                  </div>
+                  <div class="cf-actions">
+                    <a href="https://osmena-colleges.netlify.app/" target="_blank" class="cf-action-link">Open Blueprint
+                      &rarr;</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="case-file reveal-up">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>07</span></div>
+                  <div class="cf-status cf-status--active">COMPLETED</div>
+                  <div class="cf-category">Civic Tech.</div>
+                </div>
+                <div class="cf-img-col">
+                  <div class="cf-img-frame">
+                    <img src="./media/votingsystem.png" alt="Voting System">
+                    <div class="cf-img-overlay"></div>
+                  </div>
+                </div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">School Class Voting System</h3>
+                    <p class="cf-subtitle">Secure Election Platform</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Guide students through Nominate, Campaign, Vote, and Results phases with
+                        Student ID authentication.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">SOLUTION</span>
+                      <span class="cf-field-val">Password-protected Admin Panel for faculty to manage each election phase
+                        securely.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Hono.js</span><span>PostgreSQL</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="case-file reveal-up">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>08</span></div>
+                  <div class="cf-status cf-status--active">COMPLETED</div>
+                  <div class="cf-category">Social Platform</div>
+                </div>
+                <div class="cf-img-col">
+                  <div class="cf-img-frame">
+                    <img src="./media/sc.png" alt="Social Media App">
+                    <div class="cf-img-overlay"></div>
+                  </div>
+                </div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">Social Media Web Application</h3>
+                    <p class="cf-subtitle">Private Messaging &amp; Community Features</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Interactive social platform with private messaging, customizable profiles,
+                        and friend management.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">FEATURES</span>
+                      <span class="cf-field-val">Advanced search, photo/video posting, reactions and comments system.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span>HTML / CSS / JS</span><span>Django</span><span>PostgreSQL</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="case-file reveal-up">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>09</span></div>
+                  <div class="cf-status cf-status--active">COMPLETED</div>
+                  <div class="cf-category">Mobile &middot; AI</div>
+                </div>
+                <div class="cf-img-col">
+                  <div class="cf-img-frame">
+                    <img src="./media/ai.png" alt="AI Mobile App">
+                    <div class="cf-img-overlay"></div>
+                  </div>
+                </div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">AI Mobile Application</h3>
+                    <p class="cf-subtitle">Natural Language Processing Interface</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Mobile application leveraging OpenAI's API for natural language
+                        interactions.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">ARCHITECTURE</span>
+                      <span class="cf-field-val">React Native frontend paired with Django backend for a seamless
+                        conversational experience.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span>React Native</span><span>Django</span><span>SQLite</span><span>OpenAI API</span>
+                  </div>
+                  <div class="cf-actions">
+                    <a href="https://github.com/Wawayooo/Ai_Search" target="_blank" class="cf-action-link">Source Code
+                      &rarr;</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="case-file reveal-up">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>10</span></div>
+                  <div class="cf-status cf-status--active">OPEN SOURCE</div>
+                  <div class="cf-category">Desktop App.</div>
+                </div>
+                <div class="cf-img-col">
+                  <div class="cf-img-frame">
+                    <img src="./media/kali.png" alt="LMS Desktop">
+                    <div class="cf-img-overlay"></div>
+                  </div>
+                </div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">Learning Management System</h3>
+                    <p class="cf-subtitle">Desktop LMS with Interactive Quizzes</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Feature-rich desktop LMS with PDF delivery, full-text search, and
+                        interactive quizzes.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">FEATURES</span>
+                      <span class="cf-field-val">Comprehensive course and student management for administrators. University
+                        of Kali Linux themed.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span>Visual Basic</span><span>XAMPP MySQL</span>
+                  </div>
+                  <div class="cf-actions">
+                    <a href="https://fb.watch/tfkpDjXMXF/" target="_blank" class="cf-action-link">Watch Demo &rarr;</a>
+                    <a href="https://github.com/Wawayooo/University-of-Kali-Linux-Certification-System" target="_blank"
+                      class="cf-action-link">Source Code &rarr;</a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+
+            <div class="section-footer-strip section-footer-strip--light">
+              <span>CHRISTOPHER CORTES &mdash; BLUEPRINT ARCHIVE</span>
+              <span class="page-ref">PAGE 03 OF 05</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-view doc-section" id="case-files">
+          <div class="section-fold-corner" aria-hidden="true"></div>
+          <div class="doc-section-inner">
+
+            <div class="section-header">
+              <div class="sec-eyebrow">
+                <span class="sec-ref">&sect; III</span>
+                <div class="sec-rule"></div>
+                <span class="sec-tag">CURRICULUM VITAE</span>
+              </div>
+              <h2 class="section-title">Professional<br><em>Dossier</em></h2>
+              <div class="section-underrule"></div>
+            </div>
+
+            <div class="dossier-doc reveal-up">
+              <div class="dossier-sidebar">
+                <div class="dossier-wm" aria-hidden="true">CV</div>
+                <div class="dossier-sidebar-role">Computer Science Graduate &amp; Developer</div>
+                <div class="dossier-period">2021 &mdash; Present</div>
+                <div class="dossier-seal">
+                  <div class="seal-ring">
+                    <span>OPEN TO</span>
+                    <span>COMMISSIONS</span>
+                  </div>
+                </div>
+              </div>
+              <div class="dossier-body">
+                <div class="dossier-header-line">
+                  <h3 class="dossier-company">Accepting Project Commissions</h3>
+                  <span class="dossier-ref">REF: CC-EXP-01</span>
+                </div>
+                <div class="dossier-divider"></div>
+                <p class="dossier-text">As a Computer Science Graduate, I have immersed myself in building applications that
+                  blend functionality with visual storytelling. My work spans healthcare systems, social platforms,
+                  AI-powered tools, and invoicing software, etc.. &mdash; each project driven by curiosity and a desire to
+                  make
+                  technology feel intuitive and engaging.</p>
+                <p class="dossier-text">I thrive on transforming ideas into interactive experiences, whether through
+                  cinematic UI effects, modular code, or seamless backend logic. I am open to freelance opportunities,
+                  collaborations, or custom builds.</p>
+                <p class="dossier-text">Explore my work on <a href="https://github.com/Wawayooo" target="_blank"
+                    class="dossier-link">GitHub</a>, where I share source code and demos reflecting technical depth and
+                  creative edge.</p>
+                <div class="dossier-marginal-note" aria-hidden="true">
+                  <span>* Available for remote work</span>
+                </div>
+                <div class="dossier-sig-block">
+                  <div class="dossier-sig-line"></div>
+                  <span class="dossier-sig">Christopher Cortes</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-footer-strip">
+              <span>CHRISTOPHER CORTES &mdash; PROFESSIONAL DOSSIER</span>
+              <span class="page-ref">PAGE 04 OF 05</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-view doc-section" id="correspondence">
+          <div class="section-fold-corner" aria-hidden="true"></div>
+          <div class="doc-section-inner">
+
+            <div class="section-header">
+              <div class="sec-eyebrow">
+                <span class="sec-ref">&sect; IV</span>
+                <div class="sec-rule"></div>
+                <span class="sec-tag">CORRESPONDENCE</span>
+              </div>
+              <h2 class="section-title">Let&rsquo;s<br><em>Connect</em></h2>
+              <div class="section-underrule"></div>
+            </div>
+
+            <div class="correspondence-doc reveal-up">
+              <div class="corr-intro-col">
+                <p class="corr-intro">I am always excited about new opportunities and collaborations. Whether you have a
+                  project in mind or simply want to connect &mdash; I would love to hear from you.</p>
+                <div class="corr-wax-seal">CC</div>
+                <div class="corr-annotation">Available for commissioned builds, freelance work, and collaborative ventures.
+                </div>
+              </div>
+
+              <div class="corr-ledger">
+                <a href="mailto:11corteschristopher@gmail.com" class="corr-row">
+                  <span class="corr-ref">01</span>
+                  <span class="corr-method">Electronic Mail</span>
+                  <span class="corr-val">11corteschristopher@gmail.com</span>
+                  <span class="corr-arr">&rarr;</span>
+                </a>
+                <a href="https://www.linkedin.com/in/christopher-cortes-a0021a28b/" target="_blank" class="corr-row">
+                  <span class="corr-ref">02</span>
+                  <span class="corr-method">LinkedIn</span>
+                  <span class="corr-val">christopher-cortes-a0021a28b</span>
+                  <span class="corr-arr">&rarr;</span>
+                </a>
+                <a href="https://github.com/Wawayooo" target="_blank" class="corr-row">
+                  <span class="corr-ref">03</span>
+                  <span class="corr-method">GitHub</span>
+                  <span class="corr-val">github.com/Wawayooo</span>
+                  <span class="corr-arr">&rarr;</span>
+                </a>
+                <div class="corr-row corr-row--static">
+                  <span class="corr-ref">04</span>
+                  <span class="corr-method">Telephone</span>
+                  <span class="corr-val corr-val--muted">Available upon request</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-footer-strip">
+              <span>CHRISTOPHER CORTES &mdash; CORRESPONDENCE</span>
+              <span class="page-ref">PAGE 05 OF 05</span>
+            </div>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          <div class="sf-inner">
+            <div class="sf-rule"></div>
+            <div class="sf-content">
+              <span class="sf-copy">&copy; 2026 Christopher Cortes. All rights reserved.</span>
+              <span class="sf-monogram">CC</span>
+              <span class="sf-tagline">Crafted with precision &amp; modern web technologies</span>
+            </div>
+            <div class="sf-rule"></div>
+          </div>
+        </footer>
+
+      </main>
+
+      <!-- ============================= -->
+      <!-- MOBILE BOTTOM NAVIGATION       -->
+      <!-- ============================= -->
+      <nav class="app-bottomnav" aria-label="Primary navigation">
+        <button class="bottomnav-item" type="button" data-view="front-page" aria-label="About Me">
+          <span class="bottomnav-mark">AB</span>
+          <span class="bottomnav-text">About</span>
         </button>
-      </div>
-      <nav class="mobile-nav" id="mobileNav">
-        <a href="#front-page">Front Page</a>
-        <a href="#workshop">Workshop</a>
-        <a href="#blueprint-archive">Blueprint Archive</a>
-        <a href="#case-files">Case Files</a>
-        <a href="#correspondence">Correspondence</a>
+        <button class="bottomnav-item" type="button" data-view="workshop" aria-label="Workshop">
+          <span class="bottomnav-mark">WS</span>
+          <span class="bottomnav-text">Workshop</span>
+        </button>
+        <button class="bottomnav-item" type="button" data-view="blueprint-archive" aria-label="Blueprint Archive">
+          <span class="bottomnav-mark">BA</span>
+          <span class="bottomnav-text">Archive</span>
+        </button>
+        <button class="bottomnav-item" type="button" data-view="case-files" aria-label="Professional Dossier">
+          <span class="bottomnav-mark">CV</span>
+          <span class="bottomnav-text">Dossier</span>
+        </button>
+        <button class="bottomnav-item" type="button" data-view="correspondence" aria-label="Correspondence">
+          <span class="bottomnav-mark">CO</span>
+          <span class="bottomnav-text">Connect</span>
+        </button>
       </nav>
-    </header>
 
-    <section class="front-page" id="front-page">
-      <div class="fp-inner">
-
-        <div class="fp-masthead">
-          <div class="masthead-top">
-            <span class="masthead-vol">Vol. III &mdash; No. 2026</span>
-            <span class="masthead-title">THE DRAFTING ROOM</span>
-            <span class="masthead-date">Est. 2021 &mdash; Masbate City, Philippines</span>
-          </div>
-          <div class="masthead-rule-double">
-            <div class="mr-thick"></div>
-            <div class="mr-thin"></div>
-          </div>
-          <div class="masthead-kicker">Portfolio of Christopher Cortes &mdash; Full-Stack Developer &amp; Digital
-            Craftsman</div>
-          <div class="masthead-rule-single"></div>
-        </div>
-
-        <div class="fp-body-grid">
-
-          <div class="fp-col-left">
-            <div class="fp-id-card">
-              <div class="fp-id-label">IDENTIFICATION / DOSSIER</div>
-              <div class="portrait-frame">
-                <img src="./media/me11.png" alt="Christopher Cortes" class="portrait-img">
-                <div class="portrait-wash"></div>
-                <div class="portrait-corner tl"></div>
-                <div class="portrait-corner tr"></div>
-                <div class="portrait-corner bl"></div>
-                <div class="portrait-corner br"></div>
-              </div>
-              <div class="fp-id-details">
-                <div class="fp-id-name">Christopher Cortes</div>
-                <div class="fp-id-role">Full-Stack Developer</div>
-                <div class="fp-id-ref">FILE NO. CC-2026-01</div>
-              </div>
-              <div class="fp-socials">
-                <p id="lets_connect">Connect With Me:</p>
-                <div class="specialDiv">
-                  <a href="https://github.com/Wawayooo" target="_blank" class="social-stamp" title="GitHub">GH</a>
-                  <a href="https://www.linkedin.com/in/christopher-cortes-a0021a28b/" target="_blank"
-                    class="social-stamp" title="LinkedIn">LI</a>
-                  <a href="https://www.facebook.com/kriztopher.cortes.1" target="_blank" class="social-stamp"
-                    title="Facebook">FB</a>
-                  <a href="https://www.instagram.com/keith_crts?igsh=aTdudjUzbDdxdndl" target="_blank"
-                    class="social-stamp" title="GitHub">IG</a>
-                  <a href="mailto:11corteschristopher@gmail.com" class="social-stamp" title="Email">&#9993;</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="fp-sidebar-note">
-              <div class="note-label">EDITOR'S ANNOTATION</div>
-              <p class="note-text">Open to freelance commissions, collaborations, and custom builds. Operates out of
-                Masbate City.</p>
-              <div class="note-rule"></div>
-              <span class="note-stamp">AVAILABLE</span>
-            </div>
-          </div>
-
-          <div class="fp-col-main">
-            <div class="fp-headline-block">
-              <div class="fp-eyebrow">FRONT PAGE &mdash; DEVELOPER PROFILE</div>
-              <h1 class="fp-headline">
-                <em>I Build Things</em><br>
-                That Work.
-              </h1>
-              <div class="fp-subheadline">Full-Stack Applications &middot; AI-Integrated Systems &middot; Civic &amp;
-                Healthcare Technology</div>
-            </div>
-
-            <div class="fp-lede-col">
-              <p class="fp-lede"><span class="dropcap">I</span> am a passionate developer with hands-on experience
-                building scalable web and mobile applications through academic projects, freelance commissions, and
-                personal initiatives. Skilled in modern technologies and best practices — turning complex problems into
-                elegant, working solutions.</p>
-              <p class="fp-lede">My work spans healthcare management systems, social platforms, AI-powered tools, and
-                invoicing software. Each project is driven by curiosity and a desire to make
-                technology feel intuitive and engaging.</p>
-            </div>
-
-            <div class="fp-ledger">
-              <div class="fp-ledger-item">
-                <span class="ledger-num" data-target="5">0</span><span class="ledger-plus">+</span>
-                <span class="ledger-label">Projects<br>Completed</span>
-              </div>
-              <div class="ledger-divider"></div>
-              <div class="fp-ledger-item">
-                <span class="ledger-num" data-target="3">0</span><span class="ledger-plus">+</span>
-                <span class="ledger-label">Years<br>Experience</span>
-              </div>
-              <div class="ledger-divider"></div>
-              <div class="fp-ledger-item">
-                <span class="ledger-num" data-target="10">0</span><span class="ledger-plus">+</span>
-                <span class="ledger-label">Technologies<br>Mastered</span>
-              </div>
-            </div>
-
-            <div class="fp-ctas">
-              <a href="#blueprint-archive" class="cta-primary">View Blueprint Archive</a>
-              <a href="#correspondence" class="cta-secondary">Open Correspondence</a>
-            </div>
-          </div>
-
-          <div class="fp-col-right">
-            <div class="fp-right-box">
-              <div class="box-header">AT A GLANCE</div>
-              <ul class="glance-list">
-                <li><span class="gl-key">Specialty</span><span class="gl-val">Full-Stack Dev</span></li>
-                <li><span class="gl-key">Language</span><span class="gl-val">Python (Primary)</span></li>
-                <li><span class="gl-key">Location</span><span class="gl-val">Masbate City, PH</span></li>
-                <li><span class="gl-key">Status</span><span class="gl-val">Open to Work</span></li>
-              </ul>
-            </div>
-            <div class="fp-right-box fp-right-box--accent">
-              <div class="box-header">RECENT WORK</div>
-              <p class="right-box-note">E-Invoicing &amp; Verification System — 4th Year Capstone. QR-verified audit
-                trail for non-VAT transactions.</p>
-              <a href="#blueprint-archive" class="box-link">Open Blueprint &rarr;</a>
-            </div>
-            <div class="fp-coffee-mark" aria-hidden="true"></div>
-          </div>
-
-        </div>
-
-        <div class="fp-footer-strip">
-          <span>THE DRAFTING ROOM &mdash; CHRISTOPHER CORTES</span>
-          <span class="fp-page-num">PAGE 01 OF 05</span>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="doc-section" id="workshop">
-      <div class="section-fold-corner" aria-hidden="true"></div>
-      <div class="doc-section-inner">
-
-        <div class="section-header">
-          <div class="sec-eyebrow">
-            <span class="sec-ref">&sect; I</span>
-            <div class="sec-rule"></div>
-            <span class="sec-tag">WORKSHOP &amp; TOOLBOX</span>
-          </div>
-          <h2 class="section-title">Technical<br><em>Instruments</em></h2>
-          <div class="section-underrule"></div>
-          <p class="section-deck">The tools, languages, and frameworks that stock the workshop drawers.</p>
-        </div>
-
-        <div class="workshop-grid">
-
-          <div class="drawer reveal-up">
-            <div class="drawer-tab">Drawer 01</div>
-            <div class="drawer-label">FRONTEND INSTRUMENTS</div>
-            <div class="drawer-contents">
-              <span class="tool-tag">React &amp; React-Native</span>
-              <span class="tool-tag">HTML</span>
-              <span class="tool-tag">CSS</span>
-              <span class="tool-tag">Tailwind CSS</span>
-              <span class="tool-tag">Bootstrap</span>
-              <span class="tool-tag">JavaScript</span>
-            </div>
-          </div>
-
-          <div class="drawer reveal-up">
-            <div class="drawer-tab">Drawer 02</div>
-            <div class="drawer-label">BACKEND INSTRUMENTS</div>
-            <div class="drawer-contents">
-              <span class="tool-tag">Django</span>
-              <span class="tool-tag">PostgreSQL</span>
-              <span class="tool-tag">RESTful API</span>
-            </div>
-          </div>
-
-          <div class="drawer reveal-up">
-            <div class="drawer-tab">Drawer 03</div>
-            <div class="drawer-label">NETWORKING FUNDAMENTALS - Currently Learning</div>
-
-            <div class="drawer-contents">
-              <span class="tool-tag">Cisco Packet Tracer</span>
-              <!--<span class="tool-tag">Cisco Modeling Labs (CML)</span>-->
-              <span class="tool-tag">VLAN Configuration</span>
-              <span class="tool-tag">Basic Routing</span>
-              <span class="tool-tag">Basic Switching</span>
-              <span class="tool-tag">Network Simulation</span>
-            </div>
-          </div>
-
-          <div class="drawer reveal-up">
-            <div class="drawer-tab">Drawer 04</div>
-            <div class="drawer-label">CYBERSECURITY TOOLS</div>
-            <div class="drawer-contents">
-              <span class="tool-tag">Wireshark</span>
-              <span class="tool-tag">Metasploit</span>
-              <span class="tool-tag">Burp Suite</span>
-              <span class="tool-tag">GoBuster / Nikto / SQLMap</span>
-              <span class="tool-tag">Hydra / John / Hashcat</span>
-              <span class="tool-tag">Nmap / Nessus</span>
-              <span class="tool-tag">Radare2 / Ghidra</span>
-            </div>
-          </div>
-
-          <div class="drawer reveal-up">
-            <div class="drawer-tab">Drawer 05</div>
-            <div class="drawer-label">DESIGN &amp; AUXILIARY TOOLS</div>
-            <div class="drawer-contents">
-              <span class="tool-tag">Git & Github</span>
-              <span class="tool-tag">Canva</span>
-              <span class="tool-tag">Photoshop</span>
-              <span class="tool-tag">AutoCAD</span>
-              <span class="tool-tag">MS Office</span>
-              <span class="tool-tag">Blender</span>
-            </div>
-          </div>
-
-          <div class="drawer drawer--featured reveal-up">
-            <div class="drawer-tab">Primary</div>
-            <div class="drawer-label">PRINCIPAL INSTRUMENT</div>
-            <div class="featured-instrument">
-              <div class="instrument-name">Python</div>
-              <div class="instrument-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-              <p class="instrument-note">The primary language of the workshop. Used across all backend systems,
-                automation, and AI integrations.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="section-footer-strip">
-          <span>CHRISTOPHER CORTES &mdash; WORKSHOP / TOOLBOX</span>
-          <span class="page-ref">PAGE 02 OF 05</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="doc-section doc-section--dark" id="blueprint-archive">
-      <div class="section-fold-corner section-fold-corner--light" aria-hidden="true"></div>
-      <div class="doc-section-inner">
-
-        <div class="section-header section-header--dark">
-          <div class="sec-eyebrow sec-eyebrow--light">
-            <span class="sec-ref">&sect; II</span>
-            <div class="sec-rule"></div>
-            <span class="sec-tag">BLUEPRINT ARCHIVE</span>
-          </div>
-          <h2 class="section-title section-title--light">Featured<br><em>Case Files</em></h2>
-          <div class="section-underrule"></div>
-          <p class="section-deck section-deck--light">Engineering-Style documentation for selected builds. Each file
-            contains
-            objectives, solutions, and technical specifications.</p>
-        </div>
-
-        <div class="case-files-list">
-          <article class="case-file reveal-up">
-            <div class="cf-sidebar">
-              <div class="cf-file-num">CASE FILE<br><span style="color:aquamarine;">New</span></div>
-              <div class="cf-status cf-status--completed" style="color:white;">COMPLETED</div>
-              <div class="cf-category">Security Project</div>
-            </div>
-            <div class="cf-img-col">
-              <div class="cf-img-frame">
-                <img src="./media/soc_sys.png" alt="Netwatch SOC System Dashboard">
-                <div class="cf-img-overlay"></div>
-              </div>
-            </div>
-            <div class="cf-body">
-              <div class="cf-title-block">
-                <h3 class="cf-title">Netwatch SOC System</h3>
-                <p class="cf-subtitle">LAN-Based Security · Real-Time Monitoring · Proactive Defense</p>
-              </div>
-              <div class="cf-field-grid">
-                <div class="cf-field">
-                  <span class="cf-field-label">OBJECTIVE</span>
-                  <span class="cf-field-val">
-                    Build a LAN-based Security Operations Center (SOC) system to safeguard local networks, enumerate
-                    connected devices, and detect malicious activities such as Nmap scans, port probing, and suspicious
-                    downloads.
-                  </span>
-                </div>
-                <div class="cf-field">
-                  <span class="cf-field-label">SOLUTION</span>
-                  <span class="cf-field-val">
-                    A responsive backend-driven SOC application with port mirroring support, IDS/IPS integration, and
-                    structured logging. It classifies scan attempts (PORT_SCAN, SCAN_PROBE, OS_PROBE, SERVICE_PROBE,
-                    VULN_PROBE) and records attacker IP, target IP, and traffic details for incident response.
-                  </span>
-                </div>
-              </div>
-              <div class="cf-tech-strip">
-                <span>Python / Django</span>
-                <span>HTML / CSS / JavaScript</span>
-                <span>IDS/IPS Integration</span>
-                <span>Port Mirroring</span>
-                <span>Netlify Deployment</span>
-              </div>
-              <div class="cf-actions">
-                <a style="color: rgb(38, 211, 38)" href="https://github.com/chris-crts/Netwatch-SOC" target="_blank"
-                  class="cf-action-link">
-                  View Repository &rarr;
-                </a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="case-files-list">
-
-          <article class="case-file cf-flip reveal-up">
-            <div class="cf-sidebar">
-              <div class="cf-file-num">CASE FILE<br><span>01</span></div>
-              <div class="cf-status cf-status--active">COMPLETED</div>
-              <div class="cf-category">HealthTech • AI</div>
-            </div>
-
-            <div class="cf-img-col">
-              <div class="cf-img-frame">
-                <img src="./media/ClinicSys.jpg" alt="AI Clinical Management System">
-                <div class="cf-img-overlay"></div>
-              </div>
-            </div>
-
-            <div class="cf-body">
-              <div class="cf-title-block">
-                <h3 class="cf-title">AI-Powered Clinical Management System</h3>
-                <p class="cf-subtitle">
-                  Semantic Search · RAG Chatbot · Medicine Recommendation · Electronic Health Records
-                </p>
-              </div>
-
-              <div class="cf-field-grid">
-
-                <div class="cf-field">
-                  <span class="cf-field-label">OBJECTIVE</span>
-                  <span class="cf-field-val">
-                    Developed an intelligent clinical management system that streamlines appointment
-                    scheduling, electronic health records, and medicine inventory while assisting
-                    healthcare professionals through AI-powered semantic retrieval and contextual
-                    clinical decision support.
-                  </span>
-                </div>
-
-                <div class="cf-field">
-                  <span class="cf-field-label">SEMANTIC AI ENGINE</span>
-                  <span class="cf-field-val">
-                    Leveraged BioBERT to transform patient symptoms, medical history, and medicine
-                    knowledge into semantic vector embeddings. Indexed embeddings using Annoy
-                    (Approximate Nearest Neighbor) to enable high-speed similarity search,
-                    context-aware medicine retrieval, and explainable recommendation scoring.
-                  </span>
-                </div>
-
-                <div class="cf-field">
-                  <span class="cf-field-label">RAG MEDICAL ASSISTANT</span>
-                  <span class="cf-field-val">
-                    Designed a Retrieval-Augmented Generation (RAG) chatbot that combines semantic
-                    retrieval with BioGPT to answer patient-specific medical questions, explain
-                    medicine recommendations, summarize health records, and generate contextual
-                    responses using retrieved clinical information instead of relying solely on a
-                    language model.
-                  </span>
-                </div>
-
-              </div>
-
-              <div class="cf-tech-strip">
-                <span>Django</span>
-                <span>Python</span>
-                <span>PostgreSQL</span>
-                <span>BioBERT</span>
-                <span>BioGPT</span>
-                <span>Semantic Embeddings</span>
-                <span>Annoy Index</span>
-                <span>RAG</span>
-                <span>Vector Search</span>
-                <span>REST API</span>
-                <span>RBAC</span>
-                <span>HTML / CSS / JS</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-file reveal-up">
-            <div class="cf-sidebar">
-              <div class="cf-file-num">CASE FILE<br><span>02</span></div>
-              <div class="cf-status cf-status--active">LIVE</div>
-              <div class="cf-category">4th Year Capstone</div>
-            </div>
-            <div class="cf-img-col">
-              <div class="cf-img-frame">
-                <img src="./media/invoicing.png" alt="E-Invoicing System">
-                <div class="cf-img-overlay"></div>
-              </div>
-            </div>
-            <div class="cf-body">
-              <div class="cf-title-block">
-                <h3 class="cf-title">E-Invoicing &amp; Verification System</h3>
-                <p class="cf-subtitle">Invoice Creation &middot; QR Verification &middot; Immutable Records</p>
-              </div>
-              <div class="cf-field-grid">
-                <div class="cf-field">
-                  <span class="cf-field-label">OBJECTIVE</span>
-                  <span class="cf-field-val">Generate, share, negotiate, and finalize professional invoices for non-VAT
-                    transactions without registration.</span>
-                </div>
-                <div class="cf-field">
-                  <span class="cf-field-label">SOLUTION</span>
-                  <span class="cf-field-val">QR code verification backed by a tamper-evident audit trail and built-in
-                    encryption logic.</span>
-                </div>
-              </div>
-              <!--<div class="cf-compliance-note">
-                <span class="cf-compliance-label">&#9632; COMPLIANCE NOTE</span>
-                <p>This system is intended solely for non-VAT transactions and does not replace BIR-issued receipts required under Philippine tax law.</p>
-              </div>-->
-              <div class="cf-tech-strip">
-                <span>HTML / CSS / JS</span><span>Django</span><span>RESTful API</span>
-                <span>PostgreSQL</span><span>reportlab</span><span>Built-in Encryption</span>
-              </div>
-              <div class="cf-actions">
-                <a style="color: rgb(38, 211, 38)" href="https://nontaxinvoiceproof.pythonanywhere.com/" target="_blank"
-                  class="cf-action-link">Try It
-                  Now
-                  &rarr;</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-file reveal-up">
-            <div class="cf-sidebar">
-              <div class="cf-file-num">CASE FILE<br><span>03</span></div>
-              <div class="cf-status cf-status--active">LIVE</div>
-              <div class="cf-category">Promotional Project</div>
-            </div>
-            <div class="cf-img-col">
-              <div class="cf-img-frame">
-                <img src="./media/beaupro.png" alt="BeaPro Beauty Studio Website Concept">
-                <div class="cf-img-overlay"></div>
-              </div>
-            </div>
-            <div class="cf-body">
-              <div class="cf-title-block">
-                <h3 class="cf-title">BeaPro Beauty Studio Website Concept</h3>
-                <p class="cf-subtitle">Cinematic Landing · Interactive Showcases · Luxury-Inspired Design</p>
-              </div>
-              <div class="cf-field-grid">
-                <div class="cf-field">
-                  <span class="cf-field-label">OBJECTIVE</span>
-                  <span class="cf-field-val">
-                    Create a modern, editorial-style promotional website concept for BeaPro Beauty Studio, highlighting
-                    elegance, quality, and immersive digital experiences.
-                  </span>
-                </div>
-                <div class="cf-field">
-                  <span class="cf-field-label">SOLUTION</span>
-                  <span class="cf-field-val">
-                    A responsive web design featuring modern visuals to promote BeauPro - Beauty Studio.
-                  </span>
-                </div>
-              </div>
-              <div class="cf-tech-strip">
-                <span>HTML / CSS / JavaScript</span>
-                <span>Netlify Deployment</span>
-              </div>
-              <div class="cf-actions">
-                <a style="color: rgb(38, 211, 38)" href="https://beaupro-studio-masbate.netlify.app/" target="_blank"
-                  class="cf-action-link">
-                  View Live Demo &rarr;
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-file reveal-up">
-            <div class="cf-sidebar">
-              <div class="cf-file-num">CASE FILE<br><span>04</span></div>
-              <div class="cf-status cf-status--active">LIVE</div>
-              <div class="cf-category">Promotional Project</div>
-            </div>
-            <div class="cf-img-col">
-              <div class="cf-img-frame">
-                <img src="./media/rolex.png" alt="Rolex Luxury Collection Showcase">
-                <div class="cf-img-overlay"></div>
-              </div>
-            </div>
-            <div class="cf-body">
-              <div class="cf-title-block">
-                <h3 class="cf-title">Rolex Luxury Collection</h3>
-                <p class="cf-subtitle">Submariner · Daytona · GMT‑Master II</p>
-              </div>
-
-              <div class="cf-field-grid">
-                <div class="cf-field">
-                  <span class="cf-field-label">SUBMARINER</span>
-                  <span class="cf-field-val">
-                    $10,100 · Prestige 90% · Investment 85% · Craftsmanship 88% · Heritage 95%
-                    Timeless sports watch emphasizing water resistance, Oyster case design, and enduring prestige.
-                  </span>
-                </div>
-                <div class="cf-field">
-                  <span class="cf-field-label">DAYTONA</span>
-                  <span class="cf-field-val">
-                    $14,550 · Prestige 97% · Investment 98% · Craftsmanship 92% · Heritage 88%
-                    Iconic racing chronograph with Caliber 4130 movement, motorsport heritage, and unrivaled investment
-                    value.
-                  </span>
-                </div>
-                <div class="cf-field">
-                  <span class="cf-field-label">GMT‑MASTER II</span>
-                  <span class="cf-field-val">
-                    $10,700 · Prestige 92% · Investment 90% · Craftsmanship 88% · Heritage 92%
-                    Traveler’s watch with dual‑time functionality, red‑blue “Pepsi” bezel, and Caliber 3285 movement.
-                  </span>
-                </div>
-              </div>
-
-              <div class="cf-tech-strip">
-                <span>HTML / CSS / JavaScript</span>
-                <span>Netlify Deployment</span>
-              </div>
-
-              <div class="cf-actions">
-                <a style="color: rgb(38, 211, 38)" href="https://rolex-showcase.netlify.app/" target="_blank"
-                  class="cf-action-link">
-                  View Live Demo &rarr;
-                </a>
-              </div>
-            </div>
-          </article>
-
-
-          <article class="case-file reveal-up">
-            <div class="cf-sidebar">
-              <div class="cf-file-num">CASE FILE<br><span>05</span></div>
-              <div class="cf-status cf-status--active">LIVE</div>
-              <div class="cf-category">Web Dev.</div>
-            </div>
-            <div class="cf-img-col">
-              <div class="cf-img-frame">
-                <img src="./media/oc.jpg" alt="School Webpage">
-                <div class="cf-img-overlay"></div>
-              </div>
-            </div>
-            <div class="cf-body">
-              <div class="cf-title-block">
-                <h3 class="cf-title">School Documentary Webpage</h3>
-                <p class="cf-subtitle">Promotional &amp; Informational Platform</p>
-              </div>
-              <div class="cf-field-grid">
-                <div class="cf-field">
-                  <span class="cf-field-label">OBJECTIVE</span>
-                  <span class="cf-field-val">Showcase academic programs, institutional values, and legacy of Osmena
-                    Colleges.</span>
-                </div>
-                <div class="cf-field">
-                  <span class="cf-field-label">APPROACH</span>
-                  <span class="cf-field-val">Pure HTML, CSS, and JavaScript for maximum performance with no
-                    dependencies.</span>
-                </div>
-              </div>
-              <div class="cf-tech-strip">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span>
-              </div>
-              <div class="cf-actions">
-                <a href="https://osmena-colleges.netlify.app/" target="_blank" class="cf-action-link">Open Blueprint
-                  &rarr;</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-file cf-flip reveal-up">
-            <div class="cf-sidebar">
-              <div class="cf-file-num">CASE FILE<br><span>06</span></div>
-              <div class="cf-status cf-status--active">COMPLETED</div>
-              <div class="cf-category">Civic Tech.</div>
-            </div>
-            <div class="cf-img-col">
-              <div class="cf-img-frame">
-                <img src="./media/votingsystem.png" alt="Voting System">
-                <div class="cf-img-overlay"></div>
-              </div>
-            </div>
-            <div class="cf-body">
-              <div class="cf-title-block">
-                <h3 class="cf-title">School Class Voting System</h3>
-                <p class="cf-subtitle">Secure Election Platform</p>
-              </div>
-              <div class="cf-field-grid">
-                <div class="cf-field">
-                  <span class="cf-field-label">OBJECTIVE</span>
-                  <span class="cf-field-val">Guide students through Nominate, Campaign, Vote, and Results phases with
-                    Student ID authentication.</span>
-                </div>
-                <div class="cf-field">
-                  <span class="cf-field-label">SOLUTION</span>
-                  <span class="cf-field-val">Password-protected Admin Panel for faculty to manage each election phase
-                    securely.</span>
-                </div>
-              </div>
-              <div class="cf-tech-strip">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Hono.js</span><span>PostgreSQL</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-file reveal-up">
-            <div class="cf-sidebar">
-              <div class="cf-file-num">CASE FILE<br><span>07</span></div>
-              <div class="cf-status cf-status--active">COMPLETED</div>
-              <div class="cf-category">Social Platform</div>
-            </div>
-            <div class="cf-img-col">
-              <div class="cf-img-frame">
-                <img src="./media/sc.png" alt="Social Media App">
-                <div class="cf-img-overlay"></div>
-              </div>
-            </div>
-            <div class="cf-body">
-              <div class="cf-title-block">
-                <h3 class="cf-title">Social Media Web Application</h3>
-                <p class="cf-subtitle">Private Messaging &amp; Community Features</p>
-              </div>
-              <div class="cf-field-grid">
-                <div class="cf-field">
-                  <span class="cf-field-label">OBJECTIVE</span>
-                  <span class="cf-field-val">Interactive social platform with private messaging, customizable profiles,
-                    and friend management.</span>
-                </div>
-                <div class="cf-field">
-                  <span class="cf-field-label">FEATURES</span>
-                  <span class="cf-field-val">Advanced search, photo/video posting, reactions and comments system.</span>
-                </div>
-              </div>
-              <div class="cf-tech-strip">
-                <span>HTML / CSS / JS</span><span>Django</span><span>PostgreSQL</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-file cf-flip reveal-up">
-            <div class="cf-sidebar">
-              <div class="cf-file-num">CASE FILE<br><span>08</span></div>
-              <div class="cf-status cf-status--active">COMPLETED</div>
-              <div class="cf-category">Mobile &middot; AI</div>
-            </div>
-            <div class="cf-img-col">
-              <div class="cf-img-frame">
-                <img src="./media/ai.png" alt="AI Mobile App">
-                <div class="cf-img-overlay"></div>
-              </div>
-            </div>
-            <div class="cf-body">
-              <div class="cf-title-block">
-                <h3 class="cf-title">AI Mobile Application</h3>
-                <p class="cf-subtitle">Natural Language Processing Interface</p>
-              </div>
-              <div class="cf-field-grid">
-                <div class="cf-field">
-                  <span class="cf-field-label">OBJECTIVE</span>
-                  <span class="cf-field-val">Mobile application leveraging OpenAI's API for natural language
-                    interactions.</span>
-                </div>
-                <div class="cf-field">
-                  <span class="cf-field-label">ARCHITECTURE</span>
-                  <span class="cf-field-val">React Native frontend paired with Django backend for a seamless
-                    conversational experience.</span>
-                </div>
-              </div>
-              <div class="cf-tech-strip">
-                <span>React Native</span><span>Django</span><span>SQLite</span><span>OpenAI API</span>
-              </div>
-              <div class="cf-actions">
-                <a href="https://github.com/Wawayooo/Ai_Search" target="_blank" class="cf-action-link">Source Code
-                  &rarr;</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-file reveal-up">
-            <div class="cf-sidebar">
-              <div class="cf-file-num">CASE FILE<br><span>09</span></div>
-              <div class="cf-status cf-status--active">OPEN SOURCE</div>
-              <div class="cf-category">Desktop App.</div>
-            </div>
-            <div class="cf-img-col">
-              <div class="cf-img-frame">
-                <img src="./media/kali.png" alt="LMS Desktop">
-                <div class="cf-img-overlay"></div>
-              </div>
-            </div>
-            <div class="cf-body">
-              <div class="cf-title-block">
-                <h3 class="cf-title">Learning Management System</h3>
-                <p class="cf-subtitle">Desktop LMS with Interactive Quizzes</p>
-              </div>
-              <div class="cf-field-grid">
-                <div class="cf-field">
-                  <span class="cf-field-label">OBJECTIVE</span>
-                  <span class="cf-field-val">Feature-rich desktop LMS with PDF delivery, full-text search, and
-                    interactive quizzes.</span>
-                </div>
-                <div class="cf-field">
-                  <span class="cf-field-label">FEATURES</span>
-                  <span class="cf-field-val">Comprehensive course and student management for administrators. University
-                    of Kali Linux themed.</span>
-                </div>
-              </div>
-              <div class="cf-tech-strip">
-                <span>Visual Basic</span><span>XAMPP MySQL</span>
-              </div>
-              <div class="cf-actions">
-                <a href="https://fb.watch/tfkpDjXMXF/" target="_blank" class="cf-action-link">Watch Demo &rarr;</a>
-                <a href="https://github.com/Wawayooo/University-of-Kali-Linux-Certification-System" target="_blank"
-                  class="cf-action-link">Source Code &rarr;</a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="section-footer-strip section-footer-strip--light">
-          <span>CHRISTOPHER CORTES &mdash; BLUEPRINT ARCHIVE</span>
-          <span class="page-ref">PAGE 03 OF 05</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="doc-section" id="case-files">
-      <div class="section-fold-corner" aria-hidden="true"></div>
-      <div class="doc-section-inner">
-
-        <div class="section-header">
-          <div class="sec-eyebrow">
-            <span class="sec-ref">&sect; III</span>
-            <div class="sec-rule"></div>
-            <span class="sec-tag">CURRICULUM VITAE</span>
-          </div>
-          <h2 class="section-title">Professional<br><em>Dossier</em></h2>
-          <div class="section-underrule"></div>
-        </div>
-
-        <div class="dossier-doc reveal-up">
-          <div class="dossier-sidebar">
-            <div class="dossier-wm" aria-hidden="true">CV</div>
-            <div class="dossier-sidebar-role">Computer Science Graduate &amp; Developer</div>
-            <div class="dossier-period">2021 &mdash; Present</div>
-            <div class="dossier-seal">
-              <div class="seal-ring">
-                <span>OPEN TO</span>
-                <span>COMMISSIONS</span>
-              </div>
-            </div>
-          </div>
-          <div class="dossier-body">
-            <div class="dossier-header-line">
-              <h3 class="dossier-company">Accepting Project Commissions</h3>
-              <span class="dossier-ref">REF: CC-EXP-01</span>
-            </div>
-            <div class="dossier-divider"></div>
-            <p class="dossier-text">As a Computer Science Graduate, I have immersed myself in building applications that
-              blend functionality with visual storytelling. My work spans healthcare systems, social platforms,
-              AI-powered tools, and invoicing software, etc.. &mdash; each project driven by curiosity and a desire to
-              make
-              technology feel intuitive and engaging.</p>
-            <p class="dossier-text">I thrive on transforming ideas into interactive experiences, whether through
-              cinematic UI effects, modular code, or seamless backend logic. I am open to freelance opportunities,
-              collaborations, or custom builds.</p>
-            <p class="dossier-text">Explore my work on <a href="https://github.com/Wawayooo" target="_blank"
-                class="dossier-link">GitHub</a>, where I share source code and demos reflecting technical depth and
-              creative edge.</p>
-            <div class="dossier-marginal-note" aria-hidden="true">
-              <span>* Available for remote work</span>
-            </div>
-            <div class="dossier-sig-block">
-              <div class="dossier-sig-line"></div>
-              <span class="dossier-sig">Christopher Cortes</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-footer-strip">
-          <span>CHRISTOPHER CORTES &mdash; PROFESSIONAL DOSSIER</span>
-          <span class="page-ref">PAGE 04 OF 05</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="doc-section" id="correspondence">
-      <div class="section-fold-corner" aria-hidden="true"></div>
-      <div class="doc-section-inner">
-
-        <div class="section-header">
-          <div class="sec-eyebrow">
-            <span class="sec-ref">&sect; IV</span>
-            <div class="sec-rule"></div>
-            <span class="sec-tag">CORRESPONDENCE</span>
-          </div>
-          <h2 class="section-title">Let&rsquo;s<br><em>Connect</em></h2>
-          <div class="section-underrule"></div>
-        </div>
-
-        <div class="correspondence-doc reveal-up">
-          <div class="corr-intro-col">
-            <p class="corr-intro">I am always excited about new opportunities and collaborations. Whether you have a
-              project in mind or simply want to connect &mdash; I would love to hear from you.</p>
-            <div class="corr-wax-seal">CC</div>
-            <div class="corr-annotation">Available for commissioned builds, freelance work, and collaborative ventures.
-            </div>
-          </div>
-
-          <div class="corr-ledger">
-            <a href="mailto:11corteschristopher@gmail.com" class="corr-row">
-              <span class="corr-ref">01</span>
-              <span class="corr-method">Electronic Mail</span>
-              <span class="corr-val">11corteschristopher@gmail.com</span>
-              <span class="corr-arr">&rarr;</span>
-            </a>
-            <a href="https://www.linkedin.com/in/christopher-cortes-a0021a28b/" target="_blank" class="corr-row">
-              <span class="corr-ref">02</span>
-              <span class="corr-method">LinkedIn</span>
-              <span class="corr-val">christopher-cortes-a0021a28b</span>
-              <span class="corr-arr">&rarr;</span>
-            </a>
-            <a href="https://github.com/Wawayooo" target="_blank" class="corr-row">
-              <span class="corr-ref">03</span>
-              <span class="corr-method">GitHub</span>
-              <span class="corr-val">github.com/Wawayooo</span>
-              <span class="corr-arr">&rarr;</span>
-            </a>
-            <div class="corr-row corr-row--static">
-              <span class="corr-ref">04</span>
-              <span class="corr-method">Telephone</span>
-              <span class="corr-val corr-val--muted">Available upon request</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-footer-strip">
-          <span>CHRISTOPHER CORTES &mdash; CORRESPONDENCE</span>
-          <span class="page-ref">PAGE 05 OF 05</span>
-        </div>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="sf-inner">
-        <div class="sf-rule"></div>
-        <div class="sf-content">
-          <span class="sf-copy">&copy; 2026 Christopher Cortes. All rights reserved.</span>
-          <span class="sf-monogram">CC</span>
-          <span class="sf-tagline">Crafted with precision &amp; modern web technologies</span>
-        </div>
-        <div class="sf-rule"></div>
-      </div>
-    </footer>
+    </div>
 
   </div>
 
