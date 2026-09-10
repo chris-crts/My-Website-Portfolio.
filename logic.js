@@ -107,6 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const topbarViewTitle = document.getElementById("topbarViewTitle");
   const sidebarCollapseBtn = document.getElementById("sidebarCollapseBtn");
 
+  const DEFAULT_VIEW = viewIds.includes("blueprint-archive")
+    ? "blueprint-archive"
+    : viewIds[0];
+
   let currentView = null;
   let hasAnimatedCounters = false;
 
@@ -121,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showView(id, opts) {
     opts = opts || {};
-    if (!viewIds.includes(id)) id = viewIds[0];
+    if (!viewIds.includes(id)) id = DEFAULT_VIEW;
     if (id === currentView && !opts.force) return;
 
     views.forEach(function (v) {
@@ -177,7 +181,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("popstate", function (e) {
     const id =
-      (e.state && e.state.view) || location.hash.replace("#", "") || viewIds[0];
+      (e.state && e.state.view) ||
+      location.hash.replace("#", "") ||
+      DEFAULT_VIEW;
     showView(id, { updateHash: false });
   });
 
@@ -193,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const initialId = location.hash.replace("#", "") || viewIds[0];
+  const initialId = location.hash.replace("#", "") || DEFAULT_VIEW;
   showView(initialId, { updateHash: false });
 
   // =============================
