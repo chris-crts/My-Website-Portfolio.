@@ -75,7 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".view-carousel").forEach(function (carousel) {
     const viewport = carousel.querySelector(".view-carousel-viewport");
     const slides = Array.prototype.slice.call(
-      carousel.querySelectorAll(".view-slide:not(.cf-traceforge-capabilities):not(.dossier-legacy)"),
+      carousel.querySelectorAll(
+        ".view-slide:not(.cf-traceforge-capabilities):not(.dossier-legacy)",
+      ),
     );
     if (!viewport || slides.length === 0) return;
 
@@ -454,7 +456,9 @@ document.addEventListener("DOMContentLoaded", function () {
     icon.width = 28;
     icon.height = 28;
     icon.decoding = "async";
-    icon.addEventListener("error", function () { icon.remove(); });
+    icon.addEventListener("error", function () {
+      icon.remove();
+    });
     primaryInstrument.prepend(icon);
   }
 
@@ -501,7 +505,9 @@ document.addEventListener("DOMContentLoaded", function () {
     icon.height = 18;
     icon.loading = "lazy";
     icon.decoding = "async";
-    icon.addEventListener("error", function () { icon.remove(); });
+    icon.addEventListener("error", function () {
+      icon.remove();
+    });
     tag.prepend(icon);
   });
 
