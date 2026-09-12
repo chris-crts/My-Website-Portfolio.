@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repository Unavailable — Christopher Cortes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { overflow: auto; min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; }
+    .private-notice { width: min(100%, 650px); padding: clamp(1.6rem, 5vw, 3.5rem); border: 1px solid var(--border); background: var(--paper-dark); box-shadow: 10px 10px 0 color-mix(in srgb, var(--accent) 16%, transparent); }
+    .private-notice__code { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.2em; color: var(--accent); }
+    .private-notice h1 { margin: 1rem 0; font-family: var(--font-display); font-size: clamp(1.65rem, 5vw, 2.8rem); line-height: 1.2; color: var(--ink); }
+    .private-notice p { max-width: 50ch; color: var(--ink-muted); font-size: 1rem; line-height: 1.65; }
+    .private-notice__rule { width: 74px; height: 3px; margin: 1.4rem 0; background: #367D5B; }
+    .private-notice__action { display: inline-flex; margin-top: 1.5rem; padding: 0.7rem 1rem; border: 1px solid var(--accent); color: var(--ink); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .private-notice__action:hover, .private-notice__action:focus-visible { background: var(--accent); color: var(--paper); outline: none; }
+  </style>
+</head>
+<body>
+  <main class="private-notice">
+    <div class="private-notice__code">ERROR 404 · ACCESS RESTRICTED</div>
+    <div class="private-notice__rule"></div>
+    <h1>This repository is private.</h1>
+    <p>The project is documented in this portfolio, but its source repository is not publicly available. Please get in touch for a walkthrough or relevant technical discussion.</p>
+    <a class="private-notice__action" href="./index.html#blueprint-archive">Return to Case Files →</a>
+  </main>
+</body>
+</html>
