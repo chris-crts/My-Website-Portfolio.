@@ -1,1051 +1,1037 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Christopher Cortes — The Drafting Room</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Christopher Cortes — The Drafting Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JH8QEKM1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JH8QEKM1MB');
+</script>
+</head>
 <body>
 
-  <div class="paper-texture" aria-hidden="true"></div>
-  <div class="blueprint-grid" aria-hidden="true"></div>
+<div class="paper-texture" aria-hidden="true"></div>
+<div class="blueprint-grid" aria-hidden="true"></div>
 
-  <div class="loader" id="loader">
-    <div class="loader-document">
-      <div class="loader-stamp">DRAFTING ROOM</div>
-      <div class="loader-rule"></div>
-      <p class="loader-status" id="loaderStatus">Opening Drafting Room...</p>
-      <div class="loader-progress-wrap">
-        <div class="loader-progress-bar" id="loaderBar"></div>
-      </div>
-      <div class="loader-rule"></div>
-      <div class="loader-meta">
-        <span>ARCHIVE REF: CC-2026</span>
-        <span>VOL. III</span>
-      </div>
-    </div>
+<div class="loader" id="loader">
+  <div class="loader-document">
+    <div class="loader-stamp">DRAFTING ROOM</div>
+    <div class="loader-rule"></div>
+    <p class="loader-status" id="loaderStatus">Opening Drafting Room...</p>
+    <div class="loader-progress-wrap"><div class="loader-progress-bar" id="loaderBar"></div></div>
+    <div class="loader-rule"></div>
+    <div class="loader-meta"><span>ARCHIVE REF: CC-2026</span><span>VOL. III</span></div>
   </div>
+</div>
 
-  <div class="lamp-toggle" id="lampToggle" title="Toggle desk lamp">
-    <div class="lamp-icon">
-      <div class="lamp-shade"></div>
-      <div class="lamp-arm"></div>
-      <div class="lamp-base"></div>
-    </div>
-    <span class="lamp-label" id="lampLabel">Lamp On</span>
-  </div>
+<div class="theme-toggle theme-toggle-fixed" id="themeToggleFixed" title="Toggle theme">
+  <div class="lamp-icon"><svg class="theme-toggle-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div>
+  <span class="lamp-label">Light</span>
+</div>
 
-  <div class="site-wrap" id="siteWrap">
+<div class="site-wrap" id="siteWrap">
+  <div class="app-shell" id="appShell">
 
-    <div class="app-shell" id="appShell">
-
-      <!-- ============================= -->
-      <!-- DESKTOP SIDEBAR                -->
-      <!-- ============================= -->
-      <aside class="app-sidebar" aria-label="Primary navigation">
-
-        <div class="sidebar-brand">
-          <span class="sidebar-brand-mark">
-            <img src="./media/my_logo.svg" alt="CC logo">
-          </span>
+    <aside class="app-sidebar" aria-label="Primary navigation">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-inner">
+          <span class="sidebar-brand-mark"><img src="./media/my_logo.svg" alt="CC logo"></span>
           <div class="sidebar-brand-text">
             <span class="sidebar-brand-title">The Drafting Room</span>
             <span class="sidebar-brand-sub">Archive &mdash; MMXXVI</span>
           </div>
         </div>
-
-        <nav class="sidebar-nav">
-          <span class="sidebar-ref">&sect; NAVIGATION</span>
-
-          <button class="nav-item" type="button" data-view="front-page" aria-label="About Me">
-            <span class="nav-item-mark">AB</span>
-            <span class="nav-item-label">About Me</span>
-          </button>
-
-          <button class="nav-item" type="button" data-view="workshop" aria-label="Workshop">
-            <span class="nav-item-mark">WS</span>
-            <span class="nav-item-label">Workshop</span>
-          </button>
-
-          <button class="nav-item" type="button" data-view="blueprint-archive" aria-label="Blueprint Archive">
-            <span class="nav-item-mark">BA</span>
-            <span class="nav-item-label">Blueprint Archive</span>
-          </button>
-
-          <button class="nav-item" type="button" data-view="case-files" aria-label="Professional Dossier">
-            <span class="nav-item-mark">CV</span>
-            <span class="nav-item-label">Dossier</span>
-          </button>
-
-          <button class="nav-item" type="button" data-view="correspondence" aria-label="Correspondence">
-            <span class="nav-item-mark">CO</span>
-            <span class="nav-item-label">Correspondence</span>
-          </button>
-        </nav>
-
-        <div class="sidebar-footer">
-          <div class="sidebar-status">
-            <span class="sidebar-status-dot" aria-hidden="true"></span>
-            <span>Open to Commissions</span>
-          </div>
-        </div>
-
-        <button class="sidebar-handle" id="sidebarHandle" type="button" aria-label="Collapse sidebar">
-          <span></span><span></span><span></span>
-        </button>
-      </aside>
-
-      <!-- ============================= -->
-      <!-- MOBILE / TABLET TOP BAR        -->
-      <!-- ============================= -->
-      <header class="app-topbar" id="appTopbar">
-        <div class="topbar-brand">
-          <span class="topbar-mark">CC</span>
-          <span class="topbar-view-title" id="topbarViewTitle">Blueprint Archive</span>
-        </div>
-      </header>
-
-      <!-- ============================= -->
-      <!-- MAIN CONTENT                   -->
-      <!-- ============================= -->
-      <main class="app-main" id="appMain">
-
-        <!-- ============================================= -->
-        <!-- ABOUT ME — 2 slides                             -->
-        <!-- ============================================= -->
-        <section class="app-view" id="front-page">
-          <div class="view-head">
-            <div class="view-eyebrow">
-              <span class="view-ref">&sect; 0</span>
-              <div class="view-rule"></div>
-              <span class="view-tag">ABOUT ME</span>
-            </div>
-            <h1 class="view-title">Developer <em>Profile</em></h1>
-            <p class="view-deck">Full-stack applications, AI-integrated systems, and civic &amp; healthcare technology.</p>
-          </div>
-
-          <div class="view-carousel">
-            <div class="view-carousel-viewport">
-
-              <div class="view-slide">
-                <div class="about-slide-grid">
-                  <div>
-                    <div class="fp-eyebrow">PROFILE</div>
-                    <h2 class="fp-headline"><em>I Build Things</em><br>That Work.</h2>
-                    <div class="fp-subheadline">Full-Stack Applications &middot; AI-Integrated Systems &middot; Civic &amp; Healthcare Technology</div>
-                    <p class="fp-lede"><span class="dropcap">I</span> am a passionate developer with hands-on experience building scalable web and mobile applications through academic projects, freelance commissions, and personal initiatives — turning complex problems into elegant, working solutions.</p>
-                    <div class="fp-ctas">
-                      <a href="#blueprint-archive" class="cta-primary" data-view="blueprint-archive">View Blueprint Archive</a>
-                      <a href="#correspondence" class="cta-secondary" data-view="correspondence">Open Correspondence</a>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="fp-right-box">
-                      <div class="box-header">AT A GLANCE</div>
-                      <ul class="glance-list">
-                        <li><span class="gl-key">Specialty</span><span class="gl-val">Full-Stack Dev</span></li>
-                        <li><span class="gl-key">Language</span><span class="gl-val">Python (Primary)</span></li>
-                        <li><span class="gl-key">Location</span><span class="gl-val">Masbate City, PH</span></li>
-                        <li><span class="gl-key">Status</span><span class="gl-val">Open to Work</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="view-slide">
-                <div class="about-slide-grid">
-                  <div>
-                    <div class="fp-eyebrow">HIGHLIGHTS</div>
-                    <p class="fp-lede">My work spans healthcare management systems, social platforms, AI-powered tools, and invoicing software — each project driven by curiosity and a desire to make technology feel intuitive and engaging.</p>
-                    <div class="fp-ledger">
-                      <div class="fp-ledger-item">
-                        <span class="ledger-num" data-target="5">0</span><span class="ledger-plus">+</span>
-                        <span class="ledger-label">Projects<br>Completed</span>
-                      </div>
-                      <div class="ledger-divider"></div>
-                      <div class="fp-ledger-item">
-                        <span class="ledger-num" data-target="3">0</span><span class="ledger-plus">+</span>
-                        <span class="ledger-label">Years<br>Experience</span>
-                      </div>
-                      <div class="ledger-divider"></div>
-                      <div class="fp-ledger-item">
-                        <span class="ledger-num" data-target="10">0</span><span class="ledger-plus">+</span>
-                        <span class="ledger-label">Technologies<br>Mastered</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="fp-right-box fp-right-box--accent">
-                      <div class="box-header">RECENT WORK</div>
-                      <p class="right-box-note">E-Invoicing &amp; Verification System — 4th Year Capstone. QR-verified audit trail for non-VAT transactions.</p>
-                      <a href="#blueprint-archive" class="box-link" data-view="blueprint-archive">Open Blueprint &rarr;</a>
-                    </div>
-                    <div class="fp-sidebar-note">
-                      <div class="note-label">EDITOR'S ANNOTATION</div>
-                      <p class="note-text">Open to freelance commissions, collaborations, and custom builds. Operates out of Masbate City.</p>
-                      <div class="note-rule"></div>
-                      <span class="note-stamp">AVAILABLE</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="view-carousel-controls">
-              <button class="view-carousel-arrow" type="button" data-vc-prev aria-label="Previous">&#8592;</button>
-              <div class="view-carousel-dots" data-vc-dots></div>
-              <button class="view-carousel-arrow" type="button" data-vc-next aria-label="Next">&#8594;</button>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============================================= -->
-        <!-- WORKSHOP — 3 slides (drawer pairs)              -->
-        <!-- ============================================= -->
-        <section class="app-view" id="workshop">
-          <div class="view-head">
-            <div class="view-eyebrow">
-              <span class="view-ref">&sect; I</span>
-              <div class="view-rule"></div>
-              <span class="view-tag">WORKSHOP &amp; TOOLBOX</span>
-            </div>
-            <h2 class="view-title">Technical <em>Instruments</em></h2>
-            <p class="view-deck">The tools, languages, and frameworks that stock the workshop drawers.</p>
-          </div>
-
-          <div class="view-carousel">
-            <div class="view-carousel-viewport">
-
-              <div class="view-slide">
-                <div class="drawer-pair">
-                  <div class="drawer">
-                    <div class="drawer-tab">Drawer 01</div>
-                    <div class="drawer-label">FRONTEND INSTRUMENTS</div>
-                    <div class="drawer-contents">
-                      <span class="tool-tag">React &amp; React-Native</span>
-                      <span class="tool-tag">HTML</span>
-                      <span class="tool-tag">CSS</span>
-                      <span class="tool-tag">Tailwind CSS</span>
-                      <span class="tool-tag">Bootstrap</span>
-                      <span class="tool-tag">JavaScript</span>
-                    </div>
-                  </div>
-                  <div class="drawer">
-                    <div class="drawer-tab">Drawer 02</div>
-                    <div class="drawer-label">BACKEND INSTRUMENTS</div>
-                    <div class="drawer-contents">
-                      <span class="tool-tag">Django</span>
-                      <span class="tool-tag">PostgreSQL</span>
-                      <span class="tool-tag">RESTful API</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="view-slide">
-                <div class="drawer-pair">
-                  <div class="drawer">
-                    <div class="drawer-tab">Drawer 03</div>
-                    <div class="drawer-label">NETWORKING FUNDAMENTALS — Learning</div>
-                    <div class="drawer-contents">
-                      <span class="tool-tag">Cisco Packet Tracer</span>
-                      <span class="tool-tag">VLAN Configuration</span>
-                      <span class="tool-tag">Basic Routing</span>
-                      <span class="tool-tag">Basic Switching</span>
-                      <span class="tool-tag">Network Simulation</span>
-                    </div>
-                  </div>
-                  <div class="drawer">
-                    <div class="drawer-tab">Drawer 04</div>
-                    <div class="drawer-label">CYBERSECURITY TOOLS</div>
-                    <div class="drawer-contents">
-                      <span class="tool-tag">Wireshark</span>
-                      <span class="tool-tag">Metasploit</span>
-                      <span class="tool-tag">Burp Suite</span>
-                      <span class="tool-tag">GoBuster / Nikto / SQLMap</span>
-                      <span class="tool-tag">Hydra / John / Hashcat</span>
-                      <span class="tool-tag">Nmap / Nessus</span>
-                      <span class="tool-tag">Radare2 / Ghidra</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="view-slide">
-                <div class="drawer-pair">
-                  <div class="drawer">
-                    <div class="drawer-tab">Drawer 05</div>
-                    <div class="drawer-label">DESIGN &amp; AUXILIARY TOOLS</div>
-                    <div class="drawer-contents">
-                      <span class="tool-tag">Git &amp; Github</span>
-                      <span class="tool-tag">Canva</span>
-                      <span class="tool-tag">Photoshop</span>
-                      <span class="tool-tag">AutoCAD</span>
-                      <span class="tool-tag">MS Office</span>
-                      <span class="tool-tag">Blender</span>
-                    </div>
-                  </div>
-                  <div class="drawer drawer--featured">
-                    <div class="drawer-tab">Primary</div>
-                    <div class="drawer-label">PRINCIPAL INSTRUMENT</div>
-                    <div class="featured-instrument">
-                      <div class="instrument-name">Python</div>
-                      <div class="instrument-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                      <p class="instrument-note">The primary language of the workshop. Used across all backend systems, automation, and AI integrations.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="view-carousel-controls">
-              <button class="view-carousel-arrow" type="button" data-vc-prev aria-label="Previous">&#8592;</button>
-              <div class="view-carousel-dots" data-vc-dots></div>
-              <button class="view-carousel-arrow" type="button" data-vc-next aria-label="Next">&#8594;</button>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============================================= -->
-        <!-- BLUEPRINT ARCHIVE — 1 slide per project         -->
-        <!-- ============================================= -->
-        <section class="app-view" id="blueprint-archive">
-          <div class="view-head view-head--dark">
-            <div class="view-eyebrow view-eyebrow--light">
-              <span class="view-ref">&sect; II</span>
-              <div class="view-rule"></div>
-              <span class="view-tag">BLUEPRINT ARCHIVE</span>
-            </div>
-            <h2 class="view-title">Featured <em>Case Files</em></h2>
-            <p class="view-deck">Engineering-style documentation for selected builds — one project per file.</p>
-          </div>
-
-          <div class="view-carousel">
-            <div class="view-carousel-viewport">
-
-              <!-- TraceForge — slide 1: overview -->
-              <div class="view-slide">
-                <article class="case-file case-file--featured">
-                  <div class="cf-sidebar">
-                    <div class="cf-file-num"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5zM15 3v5h5M8 13h8M8 17h6"/></svg> CASE FILE <span class="cf-file-num-new">NEW</span></div>
-                    <div class="cf-status cf-status--completed"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> COMPLETED</div>
-                    <div class="cf-category"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6zM9 12l2 2 4-4"/></svg> Security Investigation Platform</div>
-                  </div>
-                  <div class="cf-sidebar" id="for_mb">
-                    <div class="cf-category"><span class="cf-file-num-new" style="background-color: green;">NEW</span><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6zM9 12l2 2 4-4"/></svg> Security Investigation Platform</div>
-                  </div>
-                  <div class="cf-featured-overview">
-                  <div class="cf-img-col">
-                    <div class="cf-img-frame cf-carousel" data-carousel="traceforge">
-                      <div class="cf-carousel-track">
-                        <div class="cf-carousel-slide is-active"><img src="./media/workspace/login.png" alt="TraceForge Security Investigation Dashboard"></div>
-                        <div class="cf-carousel-slide"><img src="./media/workspace/main_dash_light.png" alt="TraceForge Agent Mission Workspace"></div>
-                        <div class="cf-carousel-slide"><img src="./media/workspace/main_dash_dark.png" alt="TraceForge AI Security Chat"></div>
-                        <div class="cf-carousel-slide"><img src="./media/workspace/workspace_engagement_light.png" alt="TraceForge Security Findings and Evidence"></div>
-                        <div class="cf-carousel-slide"><img src="./media/workspace/workspace_engagement_dark.png" alt="TraceForge Reconnaissance and Attack Surface Discovery"></div>
-                        <div class="cf-carousel-slide"><img src="./media/workspace/byok_feature.png" alt="TraceForge Investigation Checklist and Methodology"></div>
-                        <div class="cf-carousel-slide"><img src="./media/workspace/ai_agent_recon.png" alt="TraceForge Evidence and Security Reporting"></div>
-                      </div>
-                      <div class="cf-img-overlay"></div>
-                      <button class="cf-carousel-btn cf-carousel-btn--prev" type="button" aria-label="Previous screenshot" data-carousel-prev="traceforge">&#8592;</button>
-                      <button class="cf-carousel-btn cf-carousel-btn--next" type="button" aria-label="Next screenshot" data-carousel-next="traceforge">&#8594;</button>
-                      <div class="cf-carousel-dots" aria-label="TraceForge screenshots">
-                        <button class="is-active" type="button" data-carousel-dot="traceforge" data-slide="0" aria-label="Screenshot 1"></button>
-                        <button type="button" data-carousel-dot="traceforge" data-slide="1" aria-label="Screenshot 2"></button>
-                        <button type="button" data-carousel-dot="traceforge" data-slide="2" aria-label="Screenshot 3"></button>
-                        <button type="button" data-carousel-dot="traceforge" data-slide="3" aria-label="Screenshot 4"></button>
-                        <button type="button" data-carousel-dot="traceforge" data-slide="4" aria-label="Screenshot 5"></button>
-                        <button type="button" data-carousel-dot="traceforge" data-slide="5" aria-label="Screenshot 6"></button>
-                        <button type="button" data-carousel-dot="traceforge" data-slide="6" aria-label="Screenshot 7"></button>
-                      </div>
-                      <div class="cf-carousel-counter"><span data-carousel-current="traceforge">01</span><span>/</span><span>07</span></div>
-                    </div>
-                  </div>
-                  <div class="cf-body">
-                    <div class="cf-title-block">
-                      <h3 class="cf-title">TraceForge <span>(Security Investigation Platform)</span></h3>
-                      <p class="cf-subtitle">Discover the surface · Trace the path · Prove the weakness. (1/2 — swipe for capabilities)</p>
-                    </div>
-                    <p class="cf-subtitle cf-subtitle--merged">Discover the surface · Trace the path · Prove the weakness.</p>
-                    <div class="cf-field-grid">
-                      <div class="cf-field">
-                        <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4M11 8v6M8 11h6"/></svg>OBJECTIVE</span>
-                        <span class="cf-field-val">A single workspace for security testers to recon, investigate, and prove vulnerabilities — end to end.</span>
-                      </div>
-                      <div class="cf-field">
-                        <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg>SOLUTION</span>
-                        <span class="cf-field-val">An evidence-first workflow: investigate targets, run controlled AI agent missions, and generate a traceable report from discovery to findings.</span>
-                      </div>
-                    </div>
-                    <div class="cf-featured-capabilities">
-                      <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 4.5 3.4 7.8 8 9 4.6-1.2 8-4.5 8-9V7zM9 12l2 2 4-4"/></svg>CORE CAPABILITIES</span>
-                      <div class="cf-feature-grid">
-                        <span>AI Security Chat</span><span>Agent Missions</span><span>Approval Gates</span><span>Surface Discovery</span><span>Evidence &amp; Audit Trail</span>
-                      </div>
-                    </div>
-                    <div class="cf-workflow cf-workflow--compact">
-                      <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h6a4 4 0 0 0 4-4V7M7 12h6a4 4 0 0 1 4 4v1"/></svg>INVESTIGATION WORKFLOW</span>
-                      <div class="cf-workflow-line"><span>Recon</span><span>→</span><span>Investigate</span><span>→</span><span>Verify</span><span>→</span><span>Report</span></div>
-                    </div>
-                    <div class="cf-tech-strip">
-                      <span><b>Py</b> Python</span><span><b>Dj</b> Django</span><span><b>DB</b> PostgreSQL</span><span><b>JS</b> JavaScript</span><span><b>AI</b> LLM Integration</span>
-                    </div>
-                    <div class="cf-actions">
-                      <a href="./404.html" target="_blank" rel="noopener noreferrer" class="cf-action-link cf-action-link--live">View Repository &rarr;</a>
-                    </div>
-                  </div>
-                  </div>
-                </article>
-              </div>
-
-              <!-- TraceForge — slide 2: capabilities & workflow -->
-              <div class="view-slide cf-traceforge-capabilities" aria-hidden="true">
-                <article class="case-file case-file--featured">
-                  <div class="cf-sidebar">
-                    <div class="cf-file-num"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5zM15 3v5h5M8 13h8M8 17h6"/></svg> CASE FILE <span class="cf-file-num-new">NEW</span></div>
-                    <div class="cf-status cf-status--completed"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> COMPLETED</div>
-                    <div class="cf-category"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6zM9 12l2 2 4-4"/></svg> Security Investigation Platform</div>
-                  </div>
-                  <div class="cf-body" style="flex:1;">
-                    <div class="cf-title-block">
-                      <h3 class="cf-title">TraceForge <span style="opacity:.55;">— Capabilities</span></h3>
-                      <p class="cf-subtitle">Core features, mission workflow, and stack. (2/2)</p>
-                    </div>
-                    <div class="cf-feature-section">
-                      <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 4.5 3.4 7.8 8 9 4.6-1.2 8-4.5 8-9V7zM9 12l2 2 4-4"/></svg>CORE CAPABILITIES</span>
-                      <div class="cf-feature-grid">
-                        <span>AI Security Chat</span>
-                        <span>Agent Missions</span>
-                        <span>Human Approval Gates</span>
-                        <span>Attack-Surface Discovery</span>
-                        <span>Evidence Collection</span>
-                        <span>Audit Trail &amp; Reporting</span>
-                        <span>Bring Your Own Key</span>
-                      </div>
-                    </div>
-                    <div class="cf-field-grid">
-                      <div class="cf-field">
-                        <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg>AI-ASSISTED INVESTIGATION</span>
-                        <span class="cf-field-val">AI helps interpret recon data and suggest next steps — humans stay in control of every action.</span>
-                      </div>
-                      <div class="cf-field">
-                        <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v2"/></svg>CONTROLLED EXECUTION</span>
-                        <span class="cf-field-val">Every action is scoped, limited, logged, and requires human sign-off — no unrestricted autonomy.</span>
-                      </div>
-                    </div>
-                    <div class="cf-workflow">
-                      <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h6a4 4 0 0 0 4-4V7M7 12h6a4 4 0 0 1 4 4v1"/></svg>INVESTIGATION WORKFLOW</span>
-                      <div class="cf-workflow-line">
-                        <span>Recon</span><span>→</span><span>Discover</span><span>→</span><span>Investigate</span><span>→</span><span>Verify</span><span>→</span><span>Report</span>
-                      </div>
-                    </div>
-                    <div class="cf-tech-strip">
-                      <span><b>Py</b> Python</span><span><b>Dj</b> Django</span><span><b>DB</b> PostgreSQL</span><span><b>JS</b> JavaScript</span><span><b>AI</b> LLM Integration</span>
-                    </div>
-                    <div class="cf-actions">
-                      <a href="#" target="_blank" rel="noopener noreferrer" class="cf-action-link cf-action-link--live">View Repository &rarr;</a>
-                      <a href="#" class="cf-action-link">View Case Study &rarr;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Case 01 -->
-              <div class="view-slide">
-                <article class="case-file">
-                  <div class="cf-sidebar">
-                    <div class="cf-file-num">CASE FILE <span>01</span></div>
-                    <div class="cf-status cf-status--completed">COMPLETED</div>
-                    <div class="cf-category">Security Project</div>
-                  </div>
-                  <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/soc_sys.png" alt="Netwatch SOC System Dashboard"><div class="cf-img-overlay"></div></div></div>
-                  <div class="cf-body">
-                    <div class="cf-title-block">
-                      <h3 class="cf-title">Netwatch SOC System</h3>
-                      <p class="cf-subtitle">LAN-Based Security · Real-Time Monitoring · Proactive Defense</p>
-                    </div>
-                    <div class="cf-field-grid">
-                      <div class="cf-field">
-                        <span class="cf-field-label">OBJECTIVE</span>
-                        <span class="cf-field-val">Build a LAN-based Security Operations Center (SOC) system to safeguard local networks, enumerate connected devices, and detect malicious activities such as Nmap scans, port probing, and suspicious downloads.</span>
-                      </div>
-                      <div class="cf-field">
-                        <span class="cf-field-label">SOLUTION</span>
-                        <span class="cf-field-val">A responsive backend-driven SOC application with port mirroring, IDS/IPS integration, and structured logging that classifies scan attempts and records attacker/target IP and traffic details for incident response.</span>
-                      </div>
-                    </div>
-                    <div class="cf-tech-strip">
-                      <span>Python / Django</span><span>HTML / CSS / JavaScript</span><span>IDS/IPS Integration</span><span>Port Mirroring</span>
-                    </div>
-                    <div class="cf-actions">
-                      <a href="https://github.com/chris-crts/Netwatch-SOC" target="_blank" class="cf-action-link cf-action-link--live">View Repository &rarr;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Case 02 -->
-              <div class="view-slide">
-                <article class="case-file">
-                  <div class="cf-sidebar">
-                    <div class="cf-file-num">CASE FILE <span>02</span></div>
-                    <div class="cf-status cf-status--active">COMPLETED</div>
-                    <div class="cf-category">HealthTech &bull; AI</div>
-                  </div>
-                  <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/ClinicSys.jpg" alt="AI Clinical Management System"><div class="cf-img-overlay"></div></div></div>
-                  <div class="cf-body">
-                    <div class="cf-title-block">
-                      <h3 class="cf-title">AI-Powered Clinical Management System</h3>
-                      <p class="cf-subtitle">Semantic Search · RAG Chatbot · Medicine Recommendation · EHR</p>
-                    </div>
-                    <div class="cf-field-grid">
-                      <div class="cf-field">
-                        <span class="cf-field-label">OBJECTIVE</span>
-                        <span class="cf-field-val">Streamlines appointment scheduling, electronic health records, and medicine inventory while assisting clinicians through AI-powered semantic retrieval and contextual decision support.</span>
-                      </div>
-                      <div class="cf-field">
-                        <span class="cf-field-label">SEMANTIC + RAG ENGINE</span>
-                        <span class="cf-field-val">BioBERT embeddings indexed with Annoy for fast similarity search, paired with a BioGPT RAG chatbot that answers patient-specific questions using retrieved clinical context.</span>
-                      </div>
-                    </div>
-                    <div class="cf-tech-strip">
-                      <span>Django</span><span>Python</span><span>PostgreSQL</span><span>BioBERT</span><span>BioGPT</span><span>RAG</span><span>Vector Search</span><span>RBAC</span>
-                    </div>
-                    <div class="cf-actions">
-                      <a href="./404.html?resource=private-repository" class="cf-action-link">View Repository &rarr;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Case 03 -->
-              <div class="view-slide">
-                <article class="case-file">
-                  <div class="cf-sidebar">
-                    <div class="cf-file-num">CASE FILE <span>03</span></div>
-                    <div class="cf-status cf-status--active">LIVE</div>
-                    <div class="cf-category">4th Year Capstone</div>
-                  </div>
-                  <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/invoicing.png" alt="E-Invoicing System"><div class="cf-img-overlay"></div></div></div>
-                  <div class="cf-body">
-                    <div class="cf-title-block">
-                      <h3 class="cf-title">E-Invoicing &amp; Verification System</h3>
-                      <p class="cf-subtitle">Invoice Creation · QR Verification · Immutable Records</p>
-                    </div>
-                    <div class="cf-field-grid">
-                      <div class="cf-field">
-                        <span class="cf-field-label">OBJECTIVE</span>
-                        <span class="cf-field-val">Generate, share, negotiate, and finalize professional invoices for non-VAT transactions without registration.</span>
-                      </div>
-                      <div class="cf-field">
-                        <span class="cf-field-label">SOLUTION</span>
-                        <span class="cf-field-val">QR code verification backed by a tamper-evident audit trail and built-in encryption logic.</span>
-                      </div>
-                    </div>
-                    <div class="cf-tech-strip">
-                      <span>HTML / CSS / JS</span><span>Django</span><span>RESTful API</span><span>PostgreSQL</span><span>reportlab</span>
-                    </div>
-                    <div class="cf-actions">
-                      <a href="https://nontaxinvoiceproof.pythonanywhere.com/" target="_blank" class="cf-action-link cf-action-link--live">Try It Now &rarr;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Case 04 -->
-              <div class="view-slide">
-                <article class="case-file">
-                  <div class="cf-sidebar">
-                    <div class="cf-file-num">CASE FILE <span>04</span></div>
-                    <div class="cf-status cf-status--active">LIVE</div>
-                    <div class="cf-category">Promotional Project</div>
-                  </div>
-                  <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/beaupro.png" alt="BeaPro Beauty Studio Website Concept"><div class="cf-img-overlay"></div></div></div>
-                  <div class="cf-body">
-                    <div class="cf-title-block">
-                      <h3 class="cf-title">BeaPro Beauty Studio Website Concept</h3>
-                      <p class="cf-subtitle">Cinematic Landing · Interactive Showcases · Luxury-Inspired Design</p>
-                    </div>
-                    <div class="cf-field-grid">
-                      <div class="cf-field">
-                        <span class="cf-field-label">OBJECTIVE</span>
-                        <span class="cf-field-val">A modern, editorial-style promotional concept highlighting elegance, quality, and immersive digital experiences.</span>
-                      </div>
-                      <div class="cf-field">
-                        <span class="cf-field-label">SOLUTION</span>
-                        <span class="cf-field-val">A responsive web design featuring modern visuals to promote BeauPro - Beauty Studio.</span>
-                      </div>
-                    </div>
-                    <div class="cf-tech-strip"><span>HTML / CSS / JavaScript</span><span>Netlify Deployment</span></div>
-                    <div class="cf-actions">
-                      <a href="https://beaupro-studio-masbate.netlify.app/" target="_blank" class="cf-action-link cf-action-link--live">View Live Demo &rarr;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Case 05 -->
-              <div class="view-slide">
-                <article class="case-file">
-                  <div class="cf-sidebar">
-                    <div class="cf-file-num">CASE FILE <span>05</span></div>
-                    <div class="cf-status cf-status--active">LIVE</div>
-                    <div class="cf-category">Promotional Project</div>
-                  </div>
-                  <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/rolex.png" alt="Rolex Luxury Collection Showcase"><div class="cf-img-overlay"></div></div></div>
-                  <div class="cf-body">
-                    <div class="cf-title-block">
-                      <h3 class="cf-title">Rolex Luxury Collection</h3>
-                      <p class="cf-subtitle">Submariner · Daytona · GMT&#8209;Master II</p>
-                    </div>
-                    <div class="cf-field-grid">
-                      <div class="cf-field">
-                        <span class="cf-field-label">SUBMARINER</span>
-                        <span class="cf-field-val">$10,100 · Prestige 90% · Timeless sports watch emphasizing water resistance and enduring prestige.</span>
-                      </div>
-                      <div class="cf-field">
-                        <span class="cf-field-label">DAYTONA</span>
-                        <span class="cf-field-val">$14,550 · Prestige 97% · Iconic racing chronograph with unrivaled investment value.</span>
-                      </div>
-                    </div>
-                    <div class="cf-tech-strip"><span>HTML / CSS / JavaScript</span><span>Netlify Deployment</span></div>
-                    <div class="cf-actions">
-                      <a href="https://rolex-showcase.netlify.app/" target="_blank" class="cf-action-link cf-action-link--live">View Live Demo &rarr;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Case 06 -->
-              <div class="view-slide">
-                <article class="case-file">
-                  <div class="cf-sidebar">
-                    <div class="cf-file-num">CASE FILE <span>06</span></div>
-                    <div class="cf-status cf-status--active">LIVE</div>
-                    <div class="cf-category">Web Dev.</div>
-                  </div>
-                  <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/oc.jpg" alt="School Webpage"><div class="cf-img-overlay"></div></div></div>
-                  <div class="cf-body">
-                    <div class="cf-title-block">
-                      <h3 class="cf-title">School Documentary Webpage</h3>
-                      <p class="cf-subtitle">Promotional &amp; Informational Platform</p>
-                    </div>
-                    <div class="cf-field-grid">
-                      <div class="cf-field">
-                        <span class="cf-field-label">OBJECTIVE</span>
-                        <span class="cf-field-val">Showcase academic programs, institutional values, and legacy of Osmena Colleges.</span>
-                      </div>
-                      <div class="cf-field">
-                        <span class="cf-field-label">APPROACH</span>
-                        <span class="cf-field-val">Pure HTML, CSS, and JavaScript for maximum performance with no dependencies.</span>
-                      </div>
-                    </div>
-                    <div class="cf-tech-strip"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-                    <div class="cf-actions">
-                      <a href="https://osmena-colleges.netlify.app/" target="_blank" class="cf-action-link">Open Blueprint &rarr;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Case 07 -->
-              <div class="view-slide">
-                <article class="case-file">
-                  <div class="cf-sidebar">
-                    <div class="cf-file-num">CASE FILE <span>07</span></div>
-                    <div class="cf-status cf-status--active">COMPLETED</div>
-                    <div class="cf-category">Civic Tech.</div>
-                  </div>
-                  <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/votingsystem.png" alt="Voting System"><div class="cf-img-overlay"></div></div></div>
-                  <div class="cf-body">
-                    <div class="cf-title-block">
-                      <h3 class="cf-title">School Class Voting System</h3>
-                      <p class="cf-subtitle">Secure Election Platform</p>
-                    </div>
-                    <div class="cf-field-grid">
-                      <div class="cf-field">
-                        <span class="cf-field-label">OBJECTIVE</span>
-                        <span class="cf-field-val">Guide students through Nominate, Campaign, Vote, and Results phases with Student ID authentication.</span>
-                      </div>
-                      <div class="cf-field">
-                        <span class="cf-field-label">SOLUTION</span>
-                        <span class="cf-field-val">Password-protected Admin Panel for faculty to manage each election phase securely.</span>
-                      </div>
-                    </div>
-                    <div class="cf-tech-strip"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Hono.js</span><span>PostgreSQL</span></div>
-                    <div class="cf-actions">
-                      <a href="./404.html?resource=private-repository" class="cf-action-link">View Repository &rarr;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Case 08 -->
-              <div class="view-slide">
-                <article class="case-file">
-                  <div class="cf-sidebar">
-                    <div class="cf-file-num">CASE FILE <span>08</span></div>
-                    <div class="cf-status cf-status--active">COMPLETED</div>
-                    <div class="cf-category">Social Platform</div>
-                  </div>
-                  <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/sc.png" alt="Social Media App"><div class="cf-img-overlay"></div></div></div>
-                  <div class="cf-body">
-                    <div class="cf-title-block">
-                      <h3 class="cf-title">Social Media Web Application</h3>
-                      <p class="cf-subtitle">Private Messaging &amp; Community Features</p>
-                    </div>
-                    <div class="cf-field-grid">
-                      <div class="cf-field">
-                        <span class="cf-field-label">OBJECTIVE</span>
-                        <span class="cf-field-val">Interactive social platform with private messaging, customizable profiles, and friend management.</span>
-                      </div>
-                      <div class="cf-field">
-                        <span class="cf-field-label">FEATURES</span>
-                        <span class="cf-field-val">Advanced search, photo/video posting, reactions and comments system.</span>
-                      </div>
-                    </div>
-                    <div class="cf-tech-strip"><span>HTML / CSS / JS</span><span>Django</span><span>PostgreSQL</span></div>
-                    <div class="cf-actions">
-                      <a href="./404.html?resource=private-repository" class="cf-action-link">View Repository &rarr;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Case 09 -->
-              <div class="view-slide">
-                <article class="case-file">
-                  <div class="cf-sidebar">
-                    <div class="cf-file-num">CASE FILE <span>09</span></div>
-                    <div class="cf-status cf-status--active">COMPLETED</div>
-                    <div class="cf-category">Mobile &middot; AI</div>
-                  </div>
-                  <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/ai.png" alt="AI Mobile App"><div class="cf-img-overlay"></div></div></div>
-                  <div class="cf-body">
-                    <div class="cf-title-block">
-                      <h3 class="cf-title">AI Mobile Application</h3>
-                      <p class="cf-subtitle">Natural Language Processing Interface</p>
-                    </div>
-                    <div class="cf-field-grid">
-                      <div class="cf-field">
-                        <span class="cf-field-label">OBJECTIVE</span>
-                        <span class="cf-field-val">Mobile application leveraging OpenAI's API for natural language interactions.</span>
-                      </div>
-                      <div class="cf-field">
-                        <span class="cf-field-label">ARCHITECTURE</span>
-                        <span class="cf-field-val">React Native frontend paired with Django backend for a seamless conversational experience.</span>
-                      </div>
-                    </div>
-                    <div class="cf-tech-strip"><span>React Native</span><span>Django</span><span>SQLite</span><span>OpenAI API</span></div>
-                    <div class="cf-actions">
-                      <a href="https://github.com/Wawayooo/Ai_Search" target="_blank" class="cf-action-link cf-action-link--live">Source Code &rarr;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <!-- Case 10 -->
-              <div class="view-slide">
-                <article class="case-file">
-                  <div class="cf-sidebar">
-                    <div class="cf-file-num">CASE FILE <span>10</span></div>
-                    <div class="cf-status cf-status--active">OPEN SOURCE</div>
-                    <div class="cf-category">Desktop App.</div>
-                  </div>
-                  <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/kali.png" alt="LMS Desktop"><div class="cf-img-overlay"></div></div></div>
-                  <div class="cf-body">
-                    <div class="cf-title-block">
-                      <h3 class="cf-title">Learning Management System</h3>
-                      <p class="cf-subtitle">Desktop LMS with Interactive Quizzes</p>
-                    </div>
-                    <div class="cf-field-grid">
-                      <div class="cf-field">
-                        <span class="cf-field-label">OBJECTIVE</span>
-                        <span class="cf-field-val">Feature-rich desktop LMS with PDF delivery, full-text search, and interactive quizzes.</span>
-                      </div>
-                      <div class="cf-field">
-                        <span class="cf-field-label">FEATURES</span>
-                        <span class="cf-field-val">Comprehensive course and student management for administrators. University of Kali Linux themed.</span>
-                      </div>
-                    </div>
-                    <div class="cf-tech-strip"><span>Visual Basic</span><span>XAMPP MySQL</span></div>
-                    <div class="cf-actions">
-                      <a href="https://fb.watch/tfkpDjXMXF/" target="_blank" class="cf-action-link cf-action-link--live">Watch Demo &rarr;</a>
-                      <a href="https://github.com/Wawayooo/University-of-Kali-Linux-Certification-System" target="_blank" class="cf-action-link cf-action-link--live">Source Code &rarr;</a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-            </div>
-
-            <div class="view-carousel-controls view-carousel-controls--dark">
-              <button class="view-carousel-arrow view-carousel-arrow--light" type="button" data-vc-prev aria-label="Previous project">&#8592;</button>
-              <div class="view-carousel-counter view-carousel-counter--light" data-vc-counter></div>
-              <button class="view-carousel-arrow view-carousel-arrow--light" type="button" data-vc-next aria-label="Next project">&#8594;</button>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============================================= -->
-        <!-- PROFESSIONAL DOSSIER — 2 slides                 -->
-        <!-- ============================================= -->
-        <section class="app-view" id="case-files">
-          <div class="view-head">
-            <div class="view-eyebrow">
-              <span class="view-ref">&sect; III</span>
-              <div class="view-rule"></div>
-              <span class="view-tag">CURRICULUM VITAE</span>
-            </div>
-            <h2 class="view-title">Professional <em>Dossier</em></h2>
-          </div>
-
-          <div class="view-carousel">
-            <div class="view-carousel-viewport">
-
-              <div class="view-slide dossier-board-slide">
-                <article class="dossier-board" aria-label="Professional dossier for Christopher Cortes">
-                  <header class="dossier-board__header">
-                    <div>
-                      <span class="dossier-kicker">§ III · CURRICULUM VITAE</span>
-                      <h3>Professional <em>Dossier</em></h3>
-                      <p>SKILLS <b>/</b> EDUCATION <b>/</b> PROJECT WORK <b>/</b> CAREER FOCUS</p>
-                    </div>
-                    <div class="dossier-motto">“Build with clarity.<br><i>Secure with purpose.</i>”</div>
-                  </header>
-
-                  <div class="dossier-board__identity">
-                    <div class="dossier-contact-list">
-                      <div><span class="dossier-glyph">⌾</span><p><small>ROLE</small>Software Developer</p></div>
-                      <div><span class="dossier-glyph">⌖</span><p><small>LOCATION</small>Masbate City</p></div>
-                      <div><span class="dossier-glyph">✉</span><p style="font-size: 8px;"><small>EMAIL</small>11corteschristopher@gmail.com</p></div>
-                      <div><span class="dossier-glyph">⌘</span><p><small>AVAILABILITY</small>Open to commissions</p></div>
-                    </div>
-                    <div class="dossier-portrait-card">
-                      <img src="./media/id_.png" alt="Christopher Cortes in graduation attire">
-                      <span class="dossier-photo-label">One Piece</span>
-                    </div>
-                    <div class="dossier-identity-caption">
-                      <span class="dossier-seal-mark">
-                        <img src="./media/my_logo.svg" alt="CC logo">
-                      </span>
-                      <h4>Christopher Cortes</h4>
-                      <p>COMPUTER SCIENCE GRADUATE</p>
-                    </div>
-                  </div>
-
-                  <div class="dossier-board__main">
-                    <section class="dossier-panel dossier-panel--education">
-                      <h4><span>◆</span> EDUCATION</h4>
-                      <div class="dossier-education-row">
-                        <div><strong>B.S. Computer Science</strong><span>Osmeña Colleges · Masbate City, Philippines</span></div>
-                        <div class="dossier-education-note">Batch 2026: <small> CUM-LAUDE</small></div>
-                      </div>
-                    </section>
-
-                    <section class="dossier-panel">
-                      <h4><span>⌘</span> TECHNICAL SKILLS</h4>
-                      <div class="dossier-skill-grid">
-                        <span><img src="https://cdn.simpleicons.org/python?viewbox=auto" alt="">Python</span>
-                        <span><img src="https://cdn.simpleicons.org/django?viewbox=auto" alt="">Django</span>
-                        <span><img src="https://cdn.simpleicons.org/javascript?viewbox=auto" alt="">Vanilla-JS</span>
-                        <span><img src="https://cdn.simpleicons.org/postgresql?viewbox=auto" alt="">PostgreSQL</span>
-                        <span><img src="https://cdn.simpleicons.org/react?viewbox=auto" alt="">React</span>
-                        <span><img src="https://cdn.simpleicons.org/wireshark?viewbox=auto" alt="">Wireshark</span>
-                        <span><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/1280px-ChatGPT-Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20240214002031" alt="">AI Integration</span>
-                        <span><img src="https://cdn.simpleicons.org/cisco?viewbox=auto" alt="">Networking</span>
-                      </div>
-                    </section>
-
-                    <section class="dossier-panel">
-                      <h4><span>▣</span> SELECTED PROJECTS</h4>
-                      <div class="dossier-project-grid">
-                        <a href="#blueprint-archive"><b>01</b> TraceForge</a>
-                        <a href="#blueprint-archive"><b>02</b> Clinical Management</a>
-                        <a href="#blueprint-archive"><b>03</b> E-Invoicing</a>
-                        <a href="#blueprint-archive"><b>01</b> Netwatch SOC</a>
-                      </div>
-                    </section>
-
-                    <section class="dossier-panel dossier-panel--interests">
-                      <h4><span>◉</span> CAREER INTERESTS</h4>
-                      <p><strong>Software Development</strong><strong>Cybersecurity</strong><strong>Artificial Intelligence</strong></p>
-                    </section>
-                  </div>
-
-                  <footer class="dossier-board__footer">
-                    <div class="dossier-stat"><b>10</b><span>CASE FILES</span></div>
-                    <div class="dossier-stat"><b>01</b><span>PRIMARY STACK</span></div>
-                    <div class="dossier-stat"><b>∞</b><span>BUILD MINDSET</span></div>
-                    <a href="mailto:11corteschristopher@gmail.com">START A CONVERSATION →</a>
-                  </footer>
-                </article>
-              </div>
-
-              <div class="view-slide dossier-legacy">
-                <div class="dossier-id-standalone">
-                  <div class="dossier-id-label">IDENTIFICATION / DOSSIER</div>
-                  <div class="dossier-portrait">
-                    <img src="./media/me11.png" alt="Christopher Cortes">
-                  </div>
-                  <div class="dossier-id-name">Christopher Cortes</div>
-                  <div class="dossier-id-role">Full-Stack Developer</div>
-                  <div class="dossier-id-ref">FILE NO. CC-2026-01</div>
-                  <div class="dossier-socials">
-                    <a href="https://github.com/chris-crts" target="_blank" class="dossier-social-stamp" title="GitHub">GH</a>
-                    <a href="https://www.linkedin.com/in/christopher-cortes-a0021a28b/" target="_blank" class="dossier-social-stamp" title="LinkedIn">LI</a>
-                    <a href="https://www.facebook.com/chris.sssss.11" target="_blank" class="dossier-social-stamp" title="Facebook">FB</a>
-                    <a href="https://www.instagram.com/mr.chris_crts?" target="_blank" class="dossier-social-stamp" title="Instagram">IG</a>
-                    <a href="mailto:11corteschristopher@gmail.com" class="dossier-social-stamp" title="Email">&#9993;</a>
-                  </div>
-                  <div class="dossier-period-role">
-                    <strong>Computer Science Graduate &amp; Developer</strong>
-                    2021 &mdash; Present
-                  </div>
-                  <div class="dossier-seal-standalone">
-                    <div class="seal-ring">
-                      <span>OPEN TO</span>
-                      <span>COMMISSIONS</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="view-slide dossier-legacy">
-                <div class="dossier-slide-inner">
-                  <div class="dossier-header-line">
-                    <h3 class="dossier-company">Accepting Project Commissions</h3>
-                    <span class="dossier-ref">REF: CC-EXP-01</span>
-                  </div>
-                  <div class="dossier-divider"></div>
-                  <p class="dossier-text">As a Computer Science Graduate, I have immersed myself in building applications that blend functionality with visual storytelling — spanning healthcare systems, social platforms, AI-powered tools, and invoicing software, each driven by curiosity and a desire to make technology feel intuitive and engaging.</p>
-                  <p class="dossier-text">I thrive on transforming ideas into interactive experiences, whether through cinematic UI effects, modular code, or seamless backend logic. I am open to freelance opportunities, collaborations, or custom builds.</p>
-                  <p class="dossier-text">Explore my work on <a href="https://github.com/Wawayooo" target="_blank" class="dossier-link">GitHub</a>, where I share source code and demos reflecting technical depth and creative edge.</p>
-                  <div class="dossier-sig-block">
-                    <div class="dossier-sig-line"></div>
-                    <span class="dossier-sig">Christopher Cortes</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="view-carousel-controls dossier-legacy">
-              <button class="view-carousel-arrow" type="button" data-vc-prev aria-label="Previous">&#8592;</button>
-              <div class="view-carousel-dots" data-vc-dots></div>
-              <button class="view-carousel-arrow" type="button" data-vc-next aria-label="Next">&#8594;</button>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============================================= -->
-        <!-- CORRESPONDENCE — 1 slide                        -->
-        <!-- ============================================= -->
-        <section class="app-view" id="correspondence">
-          <div class="view-head">
-            <div class="view-eyebrow">
-              <span class="view-ref">&sect; IV</span>
-              <div class="view-rule"></div>
-              <span class="view-tag">CORRESPONDENCE</span>
-            </div>
-            <h2 class="view-title">Let&rsquo;s <em>Connect</em></h2>
-          </div>
-
-          <div class="view-carousel">
-            <div class="view-carousel-viewport">
-              <div class="view-slide">
-                <div class="correspondence-inner">
-                  <div class="corr-intro-col">
-                    <p class="corr-intro">I am always excited about new opportunities and collaborations. Whether you have a project in mind or simply want to connect &mdash; I would love to hear from you.</p>
-                    <div class="corr-wax-seal">
-                      <img src="./media/my_logo.svg" alt="CC logo">
-                    </div>
-                    <div class="corr-annotation">Available for commissioned builds, freelance work, and collaborative ventures.</div>
-                  </div>
-
-                  <div>
-                    <div class="corr-ledger">
-                      <a href="mailto:11corteschristopher@gmail.com" class="corr-row">
-                        <span class="corr-ref">01</span>
-                        <span class="corr-method">Electronic Mail</span>
-                        <span class="corr-val">11corteschristopher@gmail.com</span>
-                        <span class="corr-arr">&rarr;</span>
-                      </a>
-                      <a href="https://www.linkedin.com/in/christopher-cortes-a0021a28b/" target="_blank" class="corr-row">
-                        <span class="corr-ref">02</span>
-                        <span class="corr-method">LinkedIn</span>
-                        <span class="corr-val">christopher-cortes-a0021a28b</span>
-                        <span class="corr-arr">&rarr;</span>
-                      </a>
-                      <a href="https://github.com/Wawayooo" target="_blank" class="corr-row">
-                        <span class="corr-ref">03</span>
-                        <span class="corr-method">GitHub</span>
-                        <span class="corr-val">github.com/Wawayooo</span>
-                        <span class="corr-arr">&rarr;</span>
-                      </a>
-                      <div class="corr-row corr-row--static">
-                        <span class="corr-ref">04</span>
-                        <span class="corr-method">Telephone</span>
-                        <span class="corr-val corr-val--muted">Available upon request</span>
-                      </div>
-                    </div>
-
-                    <div class="corr-footer-credit">
-                      <span>&copy; 2026 Christopher Cortes. All rights reserved.</span>
-                      <span class="corr-footer-monogram"></span>
-                      <span>Crafted with precision &amp; modern web tech</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </main>
-
-      <!-- ============================= -->
-      <!-- MOBILE BOTTOM NAVIGATION       -->
-      <!-- ============================= -->
-      <nav class="app-bottomnav" aria-label="Primary navigation">
-        <button class="bottomnav-item" type="button" data-view="front-page" aria-label="About Me">
-          <span class="bottomnav-mark">AB</span>
-          <span class="bottomnav-text">About</span>
-        </button>
-        <button class="bottomnav-item" type="button" data-view="workshop" aria-label="Workshop">
-          <span class="bottomnav-mark">WS</span>
-          <span class="bottomnav-text">Workshop</span>
-        </button>
-        <button class="bottomnav-item" type="button" data-view="blueprint-archive" aria-label="Blueprint Archive">
-          <span class="bottomnav-mark">BA</span>
-          <span class="bottomnav-text">Archive</span>
-        </button>
-        <button class="bottomnav-item" type="button" data-view="case-files" aria-label="Professional Dossier">
-          <span class="bottomnav-mark">CV</span>
-          <span class="bottomnav-text">Dossier</span>
-        </button>
-        <button class="bottomnav-item" type="button" data-view="correspondence" aria-label="Correspondence">
-          <span class="bottomnav-mark">CO</span>
-          <span class="bottomnav-text">Connect</span>
-        </button>
+      </div>
+      <nav class="sidebar-nav">
+        <span class="sidebar-ref">&sect; NAVIGATION</span>
+        <button class="nav-item" type="button" data-view="profile" aria-label="Profile"><span class="nav-item-mark">CV</span><span class="nav-item-label">Profile</span></button>
+        <button class="nav-item" type="button" data-view="workshop" aria-label="Workshop"><span class="nav-item-mark">WS</span><span class="nav-item-label">Workshop</span></button>
+        <button class="nav-item" type="button" data-view="blueprint-archive" aria-label="Blueprint Archive"><span class="nav-item-mark">BA</span><span class="nav-item-label">Blueprint Archive</span></button>
       </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-status"><span class="sidebar-status-dot" aria-hidden="true"></span><span>Open to Commissions</span></div>
+      </div>
+      <button class="sidebar-handle" id="sidebarHandle" type="button" aria-label="Collapse sidebar"><span></span><span></span><span></span></button>
+    </aside>
 
-    </div>
+    <header class="app-topbar" id="appTopbar">
+      <div class="topbar-brand"><span class="topbar-mark">CC</span><span class="topbar-wordmark">Drafting Room</span><span class="topbar-view-title" id="topbarViewTitle">Profile</span></div>
+    </header>
+
+    <main class="app-main" id="appMain">
+
+      <section class="app-view" id="profile">
+        <div class="view-head">
+          <div class="view-eyebrow">
+            <span class="view-ref">&sect; III</span>
+            <div class="view-rule"></div>
+            <span class="view-tag">CURRICULUM VITAE</span>
+          </div>
+          <h2 class="view-title">Professional <em>Dossier</em></h2>
+          <p class="view-deck">Skills / Education / Experience / Correspondence</p>
+        </div>
+
+        <div class="profile-board">
+          <aside class="profile-side">
+            <div class="profile-photo-card">
+              <img src="./media/id_.png" alt="Christopher Cortes in graduation attire">
+              <span class="profile-photo-tag">I 💓 One Piece</span>
+            </div>
+
+            <div class="profile-namebar">
+              <h3>Christopher Cortes</h3>
+              <span>“Engineer of scalable apps, breaker of bugs, and occasional coffee alchemist.”</span>
+            </div>
+
+            <ul class="profile-facts">
+              <li><span class="pf-ic">⌾</span><div><small>ROLE</small><p>Software Developer</p></div></li>
+              <li><span class="pf-ic">⌖</span><div><small>LOCATION</small><p>Masbate City, Philippines</p></div></li>
+              <li><span class="pf-ic">✉</span><div><small>EMAIL</small><p>11corteschristopher@gmail.com</p></div></li>
+              <li><span class="pf-ic">⌘</span><div><small>AVAILABILITY</small><p>Open to commissions</p></div></li>
+            </ul>
+
+            <div class="profile-quickstats">
+              <div><b>5+</b><span>Projects</span></div>
+              <div><b>3+</b><span>Years Exp.</span></div>
+              <div><b>10+</b><span>Tech Mastered</span></div>
+              <div><b>1.50</b><span>GWA</span></div>
+            </div>
+
+            <p class="profile-lede">I build scalable web &amp; mobile applications, blending healthcare, civic, and AI-powered systems. Turning complex problems into elegant, working solutions.</p>
+
+            <div class="profile-ctas">
+              <button class="profile-cta profile-cta--primary" type="button" data-view="blueprint-archive">View Archive</button>
+              <a href="mailto:11corteschristopher@gmail.com" class="profile-cta">Contact</a>
+            </div>
+          </aside>
+
+          <div class="profile-main">
+
+            <section class="profile-panel">
+              <h4><span>◆</span> EDUCATION</h4>
+              <div class="profile-edu-row">
+                <div>
+                  <strong>B.S. Computer Science</strong>
+                  <span>Osmeña Colleges · Masbate City, Philippines</span>
+                </div>
+                <div class="profile-edu-note"><small>BATCH 2026</small>Cum Laude · GWA 1.50</div>
+              </div>
+            </section>
+
+            <section class="profile-panel">
+              <h4><span>⌘</span> TECHNICAL SKILLS</h4>
+              <div class="profile-skill-grid">
+                <span><img src="https://cdn.simpleicons.org/python?viewbox=auto" alt="">Python</span>
+                <span><img src="https://cdn.simpleicons.org/django?viewbox=auto" alt="">Django</span>
+                <span><img src="https://cdn.simpleicons.org/javascript?viewbox=auto" alt="">JavaScript</span>
+                <span><img src="https://cdn.simpleicons.org/postgresql?viewbox=auto" alt="">PostgreSQL</span>
+                <span><img src="https://cdn.simpleicons.org/react?viewbox=auto" alt="">React</span>
+                <span><img src="https://cdn.simpleicons.org/wireshark?viewbox=auto" alt="">Wireshark</span>
+                <span><img src="./media/chatgpt.png" alt="">AI Integration</span>
+                <span><img src="https://cdn.simpleicons.org/cisco?viewbox=auto" alt="">Networking</span>
+              </div>
+            </section>
+
+            <section class="profile-panel">
+              <h4><span>▣</span> KEY PROJECTS</h4>
+              <div class="profile-project-grid">
+                <a href="#blueprint-archive" data-view="blueprint-archive"><b>01</b>TraceForge</a>
+                <a href="#blueprint-archive" data-view="blueprint-archive"><b>02</b>Clinical Management</a>
+                <a href="#blueprint-archive" data-view="blueprint-archive"><b>03</b>E-Invoicing</a>
+                <a href="#blueprint-archive" data-view="blueprint-archive"><b>04</b>Netwatch SOC</a>
+              </div>
+            </section>
+
+            <section class="profile-panel">
+              <h4><span>◉</span> CAREER INTERESTS</h4>
+              <div class="profile-interests">
+                <strong>Software Development</strong>
+                <strong>Cybersecurity</strong>
+                <strong>Artificial Intelligence</strong>
+              </div>
+            </section>
+
+            <section class="profile-panel profile-panel--correspondence">
+              <h4><span>✉</span> CORRESPONDENCE</h4>
+              <div class="profile-corr-ledger">
+                <a href="mailto:11corteschristopher@gmail.com" class="profile-corr-row">
+                  <span class="pc-ref">01</span><span class="pc-method">Email</span>
+                  <span class="pc-val">11corteschristopher@gmail.com</span><span class="pc-arr">&rarr;</span>
+                </a>
+                <a href="https://www.linkedin.com/in/christopher-cortes-a0021a28b/" target="_blank" class="profile-corr-row">
+                  <span class="pc-ref">02</span><span class="pc-method">LinkedIn</span>
+                  <span class="pc-val">christopher-cortes-a0021a28b</span><span class="pc-arr">&rarr;</span>
+                </a>
+                <a href="https://github.com/Wawayooo" target="_blank" class="profile-corr-row">
+                  <span class="pc-ref">03</span><span class="pc-method">GitHub</span>
+                  <span class="pc-val">github.com/Wawayooo</span><span class="pc-arr">&rarr;</span>
+                </a>
+                <div class="profile-corr-row profile-corr-row--static">
+                  <span class="pc-ref">04</span><span class="pc-method">Telephone</span>
+                  <span class="pc-val pc-val--muted">Available upon request</span>
+                </div>
+              </div>
+              <div class="profile-footer-credit">
+                <span>&copy; 2026 Christopher Cortes. All rights reserved.</span>
+                <span>Open to freelance, collaborations, and custom builds.</span>
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+        <div class="fb-profile" aria-label="Christopher Cortes — professional profile">
+          <div class="fb-cover">
+            <div class="fb-cover-grid" aria-hidden="true"></div>
+            <span class="fb-cover-badge">ARCHIVE REF · CC-2026</span>
+            <div class="fb-cover-logo" aria-hidden="true"><img src="./media/my_logo.svg" alt=""></div>
+          </div>
+
+          <div class="fb-identity">
+            <div class="fb-avatar-wrap">
+              <div class="fb-avatar"><img src="./media/id_.png" alt="Christopher Cortes in graduation attire"></div>
+              <span class="fb-avatar-online" title="Open to commissions"></span>
+            </div>
+            <h2 class="fb-name">Christopher Cortes</h2>
+            <p class="fb-headline">“Engineer of scalable apps, breaker of bugs, and occasional coffee alchemist.”</p>
+            <p class="fb-submeta">Junior Software Developer @ UpUp-App Technologies</p>
+
+            <div class="fb-actions">
+              <a href="mailto:11corteschristopher@gmail.com" class="fb-btn fb-btn--primary">
+                <svg class="fb-btn-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <span>Contact</span>
+              </a>
+              <button type="button" class="fb-btn fb-btn--secondary" data-view="blueprint-archive">
+                <svg class="fb-btn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.6a2 2 0 0 1 2-2h3.5l1.8 2.2H19a2 2 0 0 1 2 2v7.2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                <span>View Archive</span>
+              </button>
+            </div>
+
+            <div class="fb-stats">
+              <div><b>10+</b><span>Projects</span></div>
+              <div><b>2+</b><span>Years Freelance Exp.</span></div>
+              <div><b>10+</b><span>Technologies</span></div>
+              <div><b>4.5</b><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" viewBox="0 0 24 24">
+                <path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.402 8.168L12 18.896l-7.336 3.87 1.402-8.168L.132 9.211l8.2-1.193z"/>
+              </svg>
+              </div>
+            </div>
+          </div>
+
+          <nav class="fb-tabs" aria-label="Profile sections">
+            <button type="button" class="fb-tab is-active" data-fb-target="fb-about">Intro</button>
+            <button type="button" class="fb-tab" data-fb-target="fb-education">Education</button>
+            <button type="button" class="fb-tab" data-fb-target="fb-skills">Skills</button>
+            <button type="button" class="fb-tab" data-fb-target="fb-projects">Projects</button>
+            <button type="button" class="fb-tab" data-fb-target="fb-contact">Contact</button>
+          </nav>
+
+          <div class="fb-feed">
+            <section class="fb-card" id="fb-about">
+              <header class="fb-card-head">
+                <span class="fb-card-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></span>
+                <div class="fb-card-titles"><h3>Intro</h3><span>Software Developer</span></div>
+              </header>
+              <div class="fb-card-body">
+                <ul class="fb-intro-list">
+                  <li>
+                    <svg class="fb-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
+                    <span>Works as <b>Software Developer</b></span>
+                  </li>
+                  <li>
+                    <svg class="fb-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+                    <span>Lives in <b>Masbate City, Philippines</b></span>
+                  </li>
+                  <li>
+                    <svg class="fb-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                    <span><b>11corteschristopher@gmail.com</b></span>
+                  </li>
+                  <li>
+                    <svg class="fb-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+                    <span>Available for <b>freelance & collaborations</b></span>
+                  </li>
+                </ul>
+                <p class="fb-lede">“I build scalable software applications, transforming complex challenges into elegant, reliable solutions.”</p>
+              </div>
+            </section>
+
+            <section class="fb-card" id="fb-education">
+              <header class="fb-card-head">
+                <span class="fb-card-ic">
+                  <img src="media/oc_logo.png" alt="OC Logo">
+                </span>
+                <div class="fb-card-titles">
+                  <h3>Education</h3>
+                  <span>Osmeña Colleges</span>
+                </div>
+              </header>
+              <div class="fb-card-body">
+                <div class="fb-edu">
+                  <span class="fb-edu-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 2.5 9 12 14l9.5-5z"/><path d="M6.5 11.4V16c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-4.6"/></svg></span>
+                  <div class="fb-edu-text">
+                    <strong>B.S. Computer Science</strong>
+                    <span>Osmeña Colleges · Masbate City, Philippines</span>
+                    <span>Cum Laude · GWA 1.50 · Batch 2026</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="fb-card" id="fb-skills">
+              <header class="fb-card-head">
+                <span class="fb-card-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 8-4.5 4 4.5 4M14.5 8l4.5 4-4.5 4"/></svg></span>
+                <div class="fb-card-titles"><h3>Skills & Interests</h3><span>Tools, languages & focus areas</span></div>
+              </header>
+              <div class="fb-card-body">
+                <div class="fb-chips">
+                  <span class="fb-chip"><img src="https://cdn.simpleicons.org/python?viewbox=auto" alt="" loading="lazy" decoding="async">Python</span>
+                  <span class="fb-chip"><img src="https://cdn.simpleicons.org/django?viewbox=auto" alt="" loading="lazy" decoding="async">Django</span>
+                  <span class="fb-chip"><img src="https://cdn.simpleicons.org/javascript?viewbox=auto" alt="" loading="lazy" decoding="async">JavaScript</span>
+                  <span class="fb-chip"><img src="https://cdn.simpleicons.org/postgresql?viewbox=auto" alt="" loading="lazy" decoding="async">PostgreSQL</span>
+                  <span class="fb-chip"><img src="https://cdn.simpleicons.org/react?viewbox=auto" alt="" loading="lazy" decoding="async">React</span>
+                  <span class="fb-chip"><img src="https://cdn.simpleicons.org/wireshark?viewbox=auto" alt="" loading="lazy" decoding="async">Wireshark</span>
+                  <span class="fb-chip"><img src="./media/chatgpt.png" alt="" loading="lazy" decoding="async">AI Integration</span>
+                  <span class="fb-chip"><img src="https://cdn.simpleicons.org/cisco?viewbox=auto" alt="" loading="lazy" decoding="async">Networking</span>
+                  <span class="fb-chip"><img src="./media/anime.svg" alt="" loading="lazy" decoding="async">Anime</span>
+                  <span class="fb-chip"><img src="./media/op.svg" alt="" loading="lazy" decoding="async">One Piece</span>
+                  <span class="fb-chip"><img src="./media/avengers.png" alt="" loading="lazy" decoding="async">Avengers</span>
+                  <span class="fb-chip"><img src="./media/spiderman.svg" alt="" loading="lazy" decoding="async">Spider-Man</span>
+                  <span class="fb-chip"><img src="./media/pokemon.svg" alt="" loading="lazy" decoding="async">Pokemon</span>
+                  <span class="fb-chip">
+                    <img src="./media/cats.png" alt="Cat Logo" loading="lazy" decoding="async">
+                    Cats
+                  </span>
+                  <span class="fb-chip"><img src="./media/coffee.svg" alt="" loading="lazy" decoding="async">Coffee</span>
+                </div>
+                <p class="fb-subhead">Career Interests</p>
+                <div class="fb-chips">
+                  <span class="fb-chip fb-chip--plain">Software Development</span>
+                  <span class="fb-chip fb-chip--plain">Cybersecurity</span>
+                  <span class="fb-chip fb-chip--plain">Artificial Intelligence</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="fb-card" id="fb-projects">
+              <header class="fb-card-head">
+                <span class="fb-card-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17"/></svg></span>
+                <div class="fb-card-titles"><h3>Key Projects</h3><span>Selected builds from the archive</span></div>
+              </header>
+              <div class="fb-card-body">
+                <div class="fb-list">
+                  <button type="button" class="fb-list-row" data-view="blueprint-archive">
+                    <span class="fb-list-thumb fb-list-thumb--num">01</span>
+                    <span class="fb-list-text"><strong>TraceForge</strong><small>Security Investigation Platform</small></span>
+                    <svg class="fb-list-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                  </button>
+                  <button type="button" class="fb-list-row" data-view="blueprint-archive">
+                    <span class="fb-list-thumb fb-list-thumb--num">02</span>
+                    <span class="fb-list-text"><strong>Clinical Management System</strong><small>AI · Semantic Search · RAG</small></span>
+                    <svg class="fb-list-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                  </button>
+                  <button type="button" class="fb-list-row" data-view="blueprint-archive">
+                    <span class="fb-list-thumb fb-list-thumb--num">03</span>
+                    <span class="fb-list-text"><strong>E-Invoicing & Verification</strong><small>QR Verification · Immutable Records</small></span>
+                    <svg class="fb-list-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                  </button>
+                  <button type="button" class="fb-list-row" data-view="blueprint-archive">
+                    <span class="fb-list-thumb fb-list-thumb--num">04</span>
+                    <span class="fb-list-text"><strong>Netwatch SOC System</strong><small>Real-Time LAN Security Monitoring</small></span>
+                    <svg class="fb-list-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <section class="fb-card" id="fb-contact">
+              <header class="fb-card-head">
+                <span class="fb-card-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                <div class="fb-card-titles"><h3>Contact & Links</h3><span>Open to freelance & collaborations</span></div>
+              </header>
+              <div class="fb-card-body">
+                <div class="fb-list">
+                  <a class="fb-list-row" href="mailto:11corteschristopher@gmail.com">
+                    <span class="fb-list-thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                    <span class="fb-list-text"><strong>Email</strong><small>11corteschristopher@gmail.com</small></span>
+                    <svg class="fb-list-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                  </a>
+                  <a class="fb-list-row" href="https://www.linkedin.com/in/christopher-cortes-a0021a28b/" target="_blank" rel="noopener noreferrer">
+                    <span class="fb-list-thumb"><svg class="fb-brand-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span>
+                    <span class="fb-list-text"><strong>LinkedIn</strong><small>christopher-cortes-a0021a28b</small></span>
+                    <svg class="fb-list-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                  </a>
+                  <a class="fb-list-row" href="https://github.com/chris-crts" target="_blank" rel="noopener noreferrer">
+                    <span class="fb-list-thumb"><svg class="fb-brand-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.19 1.78 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></span>
+                    <span class="fb-list-text"><strong>GitHub</strong><small>github.com/chris-crts</small></span>
+                    <svg class="fb-list-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                  </a>
+                  <a class="fb-list-row" href="./media/file/Professional_CV.pdf" download="Christopher-Cortes-CV.pdf">
+                    <span class="fb-list-thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg></span>
+                    <span class="fb-list-text"><strong>Download My CV</strong><small>PDF · Updated 2026</small></span>
+                    <svg class="fb-list-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+                  </a>
+                  <div class="fb-list-row fb-list-row--static">
+                    <span class="fb-list-thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 3.5h3l1.6 4-2.1 1.4a12 12 0 0 0 6.2 6.2l1.4-2.1 4 1.6v3a1.6 1.6 0 0 1-1.7 1.6A15 15 0 0 1 4.8 5.2 1.6 1.6 0 0 1 6.4 3.5z"/></svg></span>
+                    <span class="fb-list-text"><strong>Telephone</strong><small>Available upon request</small></span>
+                  </div>
+                </div>
+                <div class="fb-credit">
+                  <span>&copy; 2026 Christopher Cortes. All rights reserved.</span>
+                  <span>Open to freelance, collaborations, and custom builds.</span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-view" id="workshop">
+        <div class="view-head">
+          <div class="view-eyebrow">
+            <span class="view-ref">&sect; I</span>
+            <div class="view-rule"></div>
+            <span class="view-tag">WORKSHOP &amp; TOOLBOX</span>
+          </div>
+          <h2 class="view-title">Technical <em>Instruments</em></h2>
+          <p class="view-deck">The tools, languages, and frameworks that stock the workshop drawers.</p>
+        </div>
+
+        <div class="view-carousel">
+          <div class="view-carousel-viewport">
+
+            <div class="view-slide">
+              <div class="drawer-pair">
+                <div class="drawer">
+                  <div class="drawer-tab">Drawer 01</div>
+                  <div class="drawer-label">FRONTEND INSTRUMENTS</div>
+                  <div class="drawer-contents">
+                    <span class="tool-tag">React &amp; React-Native</span>
+                    <span class="tool-tag">HTML</span>
+                    <span class="tool-tag">CSS</span>
+                    <span class="tool-tag">Tailwind CSS</span>
+                    <span class="tool-tag">Bootstrap</span>
+                    <span class="tool-tag">JavaScript</span>
+                  </div>
+                </div>
+                <div class="drawer">
+                  <div class="drawer-tab">Drawer 02</div>
+                  <div class="drawer-label">BACKEND INSTRUMENTS</div>
+                  <div class="drawer-contents">
+                    <span class="tool-tag">Django</span>
+                    <span class="tool-tag">PostgreSQL</span>
+                    <span class="tool-tag">RESTful API</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="view-slide">
+              <div class="drawer-pair">
+                <div class="drawer">
+                  <div class="drawer-tab">Drawer 03</div>
+                  <div class="drawer-label">NETWORKING FUNDAMENTALS — Learning</div>
+                  <div class="drawer-contents">
+                    <span class="tool-tag">Cisco Packet Tracer</span>
+                    <span class="tool-tag">VLAN Configuration</span>
+                    <span class="tool-tag">Basic Routing</span>
+                    <span class="tool-tag">Basic Switching</span>
+                    <span class="tool-tag">Network Simulation</span>
+                  </div>
+                </div>
+                <div class="drawer">
+                  <div class="drawer-tab">Drawer 04</div>
+                  <div class="drawer-label">CYBERSECURITY TOOLS</div>
+                  <div class="drawer-contents">
+                    <span class="tool-tag">Wireshark</span>
+                    <span class="tool-tag">Metasploit</span>
+                    <span class="tool-tag">Burp Suite</span>
+                    <span class="tool-tag">GoBuster / Nikto / SQLMap</span>
+                    <span class="tool-tag">Hydra / John / Hashcat</span>
+                    <span class="tool-tag">Nmap / Nessus</span>
+                    <span class="tool-tag">Radare2 / Ghidra</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="view-slide">
+              <div class="drawer-pair">
+                <div class="drawer">
+                  <div class="drawer-tab">Drawer 05</div>
+                  <div class="drawer-label">DESIGN &amp; AUXILIARY TOOLS</div>
+                  <div class="drawer-contents">
+                    <span class="tool-tag">Git &amp; Github</span>
+                    <span class="tool-tag">Canva</span>
+                    <span class="tool-tag">Photoshop</span>
+                    <span class="tool-tag">AutoCAD</span>
+                    <span class="tool-tag">MS Office</span>
+                    <span class="tool-tag">Blender</span>
+                  </div>
+                </div>
+                <div class="drawer drawer--featured">
+                  <div class="drawer-tab">Primary</div>
+                  <div class="drawer-label">PRINCIPAL INSTRUMENT</div>
+                  <div class="featured-instrument">
+                    <div class="instrument-name">Python</div>
+                    <div class="instrument-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="instrument-note">The primary language of the workshop. Used across all backend systems, automation, and AI integrations.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="view-carousel-controls">
+            <button class="view-carousel-arrow" type="button" data-vc-prev aria-label="Previous">&#8592;</button>
+            <div class="view-carousel-dots" data-vc-dots></div>
+            <button class="view-carousel-arrow" type="button" data-vc-next aria-label="Next">&#8594;</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-view" id="blueprint-archive">
+        <div class="view-head view-head--dark">
+          <div class="view-eyebrow view-eyebrow--light">
+            <span class="view-ref">&sect; II</span>
+            <div class="view-rule"></div>
+            <span class="view-tag">BLUEPRINT ARCHIVE</span>
+          </div>
+          <h2 class="view-title">Featured <em>Case Files</em></h2>
+          <p class="view-deck">Engineering-style documentation for selected builds — one project per file.</p>
+        </div>
+
+        <div class="view-carousel">
+          <div class="view-carousel-viewport">
+
+            <div class="view-slide">
+              <article class="case-file case-file--featured">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5zM15 3v5h5M8 13h8M8 17h6"/></svg> CASE FILE <span class="cf-file-num-new">NEW</span></div>
+                  <div class="cf-status cf-status--completed"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> COMPLETED</div>
+                  <div class="cf-category"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6zM9 12l2 2 4-4"/></svg> Security Investigation Platform</div>
+                </div>
+                <div class="cf-sidebar" id="for_mb">
+                  <div class="cf-category"><span class="cf-file-num-new" style="background-color:green;">NEW</span><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6zM9 12l2 2 4-4"/></svg> Security Investigation Platform</div>
+                </div>
+                <div class="cf-featured-overview">
+                <div class="cf-img-col">
+                  <div class="cf-img-frame cf-carousel" data-carousel="traceforge">
+                    <div class="cf-carousel-track">
+                      <div class="cf-carousel-slide is-active"><img src="./media/workspace/login.png" alt="TraceForge Security Investigation Dashboard"></div>
+                      <div class="cf-carousel-slide"><img src="./media/workspace/main_dash_light.png" alt="TraceForge Agent Mission Workspace"></div>
+                      <div class="cf-carousel-slide"><img src="./media/workspace/main_dash_dark.png" alt="TraceForge AI Security Chat"></div>
+                      <div class="cf-carousel-slide"><img src="./media/workspace/workspace_engagement_light.png" alt="TraceForge Security Findings and Evidence"></div>
+                      <div class="cf-carousel-slide"><img src="./media/workspace/workspace_engagement_dark.png" alt="TraceForge Reconnaissance and Attack Surface Discovery"></div>
+                      <div class="cf-carousel-slide"><img src="./media/workspace/byok_feature.png" alt="TraceForge Investigation Checklist and Methodology"></div>
+                      <div class="cf-carousel-slide"><img src="./media/workspace/ai_agent_recon.png" alt="TraceForge Evidence and Security Reporting"></div>
+                    </div>
+                    <div class="cf-img-overlay"></div>
+                    <button class="cf-carousel-btn cf-carousel-btn--prev" type="button" aria-label="Previous screenshot" data-carousel-prev="traceforge">&#8592;</button>
+                    <button class="cf-carousel-btn cf-carousel-btn--next" type="button" aria-label="Next screenshot" data-carousel-next="traceforge">&#8594;</button>
+                    <div class="cf-carousel-dots" aria-label="TraceForge screenshots">
+                      <button class="is-active" type="button" data-carousel-dot="traceforge" data-slide="0" aria-label="Screenshot 1"></button>
+                      <button type="button" data-carousel-dot="traceforge" data-slide="1" aria-label="Screenshot 2"></button>
+                      <button type="button" data-carousel-dot="traceforge" data-slide="2" aria-label="Screenshot 3"></button>
+                      <button type="button" data-carousel-dot="traceforge" data-slide="3" aria-label="Screenshot 4"></button>
+                      <button type="button" data-carousel-dot="traceforge" data-slide="4" aria-label="Screenshot 5"></button>
+                      <button type="button" data-carousel-dot="traceforge" data-slide="5" aria-label="Screenshot 6"></button>
+                      <button type="button" data-carousel-dot="traceforge" data-slide="6" aria-label="Screenshot 7"></button>
+                    </div>
+                    <div class="cf-carousel-counter"><span data-carousel-current="traceforge">01</span><span>/</span><span>07</span></div>
+                  </div>
+                </div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">TraceForge <span>(Security Investigation Platform)</span></h3>
+                    <p class="cf-subtitle">Discover the surface · Trace the path · Prove the weakness. (1/2 — swipe for capabilities)</p>
+                  </div>
+                  <p class="cf-subtitle cf-subtitle--merged">Discover the surface · Trace the path · Prove the weakness.</p>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4M11 8v6M8 11h6"/></svg>OBJECTIVE</span>
+                      <span class="cf-field-val">A single workspace for security testers to recon, investigate, and prove vulnerabilities — end to end.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg>SOLUTION</span>
+                      <span class="cf-field-val">An evidence-first workflow: investigate targets, run controlled AI agent missions, and generate a traceable report from discovery to findings.</span>
+                    </div>
+                  </div>
+                  <div class="cf-featured-capabilities">
+                    <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 4.5 3.4 7.8 8 9 4.6-1.2 8-4.5 8-9V7zM9 12l2 2 4-4"/></svg>CORE CAPABILITIES</span>
+                    <div class="cf-feature-grid">
+                      <span>AI Security Chat</span><span>Agent Missions</span><span>Approval Gates</span><span>Surface Discovery</span><span>Evidence &amp; Audit Trail</span>
+                    </div>
+                  </div>
+                  <div class="cf-workflow cf-workflow--compact">
+                    <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h6a4 4 0 0 0 4-4V7M7 12h6a4 4 0 0 1 4 4v1"/></svg>INVESTIGATION WORKFLOW</span>
+                    <div class="cf-workflow-line"><span>Recon</span><span>→</span><span>Investigate</span><span>→</span><span>Verify</span><span>→</span><span>Report</span></div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span><b>Py</b> Python</span>
+                    <span><b>Dj</b> Django</span>
+                    <span><b>DB</b> PostgreSQL</span>
+                    <span>
+                      <img src="https://cdn.simpleicons.org/react?viewbox=auto" alt="React Logo" class="cf-tech-icon">
+                      React
+                    </span>
+                    <span>🤖 LLM Integration</span>
+                  </div>
+                  <div class="cf-actions">
+                    <a href="./404.html" target="_blank" rel="noopener noreferrer" class="cf-action-link cf-action-link--live">View Repository &rarr;</a>
+                  </div>
+                </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="view-slide">
+              <article class="case-file">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5zM15 3v5h5M8 13h8M8 17h6"/></svg> CASE FILE <span>05</span></div>
+                  <div class="cf-status cf-status--completed"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> COMPLETED</div>
+                  <div class="cf-category"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5"/></svg> Real Estate Marketing Website</div>
+                </div>
+                <div class="cf-sidebar" id="for_mb">
+                  <div class="cf-category"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5"/></svg> Real Estate Marketing Website</div>
+                </div>
+                <div class="cf-img-col">
+                  <div class="cf-img-frame">
+                    <img src="./media/marci.png" alt="Marci Metzger Homes real estate landing page">
+                  </div>
+                  <div class="cf-img-overlay"></div>
+                </div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">Marci Metzger Homes <span>(Realtor Landing Page)</span></h3>
+                    <p class="cf-subtitle">A full-scroll marketing site for a Pahrump, Nevada real estate broker — built to convert visitors into leads.</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4M11 8v6M8 11h6"/></svg>OBJECTIVE</span>
+                      <span class="cf-field-val">Give a local realtor a polished, mobile-friendly web presence that showcases listings, builds trust, and drives inquiries.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg>SOLUTION</span>
+                      <span class="cf-field-val">A single-page site with a hero showcase, listing search, service breakdown, photo gallery, and a working contact form — all hand-built with vanilla HTML/CSS/JS.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span><b>HT</b> HTML</span><span><b>CS</b> CSS</span><span><b>JS</b> JavaScript</span>
+                  </div>
+                  <div class="cf-actions">
+                    <a href="https://junior-web-builder-ass.netlify.app/" target="_blank" rel="noopener noreferrer" class="cf-action-link cf-action-link--live">View Live Site &rarr;</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="view-slide cf-traceforge-capabilities" aria-hidden="true">
+              <article class="case-file case-file--featured">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5zM15 3v5h5M8 13h8M8 17h6"/></svg> CASE FILE <span class="cf-file-num-new">NEW</span></div>
+                  <div class="cf-status cf-status--completed"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> COMPLETED</div>
+                  <div class="cf-category"><svg class="cf-mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6zM9 12l2 2 4-4"/></svg> Security Investigation Platform</div>
+                </div>
+                <div class="cf-body" style="flex:1;">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">TraceForge <span style="opacity:.55;">— Capabilities</span></h3>
+                    <p class="cf-subtitle">Core features, mission workflow, and stack. (2/2)</p>
+                  </div>
+                  <div class="cf-feature-section">
+                    <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 4.5 3.4 7.8 8 9 4.6-1.2 8-4.5 8-9V7zM9 12l2 2 4-4"/></svg>CORE CAPABILITIES</span>
+                    <div class="cf-feature-grid">
+                      <span>AI Security Chat</span>
+                      <span>Agent Missions</span>
+                      <span>Human Approval Gates</span>
+                      <span>Attack-Surface Discovery</span>
+                      <span>Evidence Collection</span>
+                      <span>Audit Trail &amp; Reporting</span>
+                      <span>Bring Your Own Key</span>
+                    </div>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg>AI-ASSISTED INVESTIGATION</span>
+                      <span class="cf-field-val">AI helps interpret recon data and suggest next steps — humans stay in control of every action.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v2"/></svg>CONTROLLED EXECUTION</span>
+                      <span class="cf-field-val">Every action is scoped, limited, logged, and requires human sign-off — no unrestricted autonomy.</span>
+                    </div>
+                  </div>
+                  <div class="cf-workflow">
+                    <span class="cf-field-label"><svg class="cf-label-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h6a4 4 0 0 0 4-4V7M7 12h6a4 4 0 0 1 4 4v1"/></svg>INVESTIGATION WORKFLOW</span>
+                    <div class="cf-workflow-line">
+                      <span>Recon</span><span>→</span><span>Discover</span><span>→</span><span>Investigate</span><span>→</span><span>Verify</span><span>→</span><span>Report</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span><b>Py</b> Python</span><span><b>Dj</b> Django</span><span><b>DB</b> PostgreSQL</span><span><b>JS</b> JavaScript</span><span><b>AI</b> LLM Integration</span>
+                  </div>
+                  <div class="cf-actions">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="cf-action-link cf-action-link--live">View Repository &rarr;</a>
+                    <a href="#" class="cf-action-link">View Case Study &rarr;</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="view-slide">
+              <article class="case-file">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>01</span></div>
+                  <div class="cf-status cf-status--completed">COMPLETED</div>
+                  <div class="cf-category">Security Project</div>
+                </div>
+                <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/soc_sys.png" alt="Netwatch SOC System Dashboard"><div class="cf-img-overlay"></div></div></div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">Netwatch SOC System</h3>
+                    <p class="cf-subtitle">LAN-Based Security · Real-Time Monitoring · Proactive Defense</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Build a LAN-based Security Operations Center (SOC) system to safeguard local networks, enumerate connected devices, and detect malicious activities such as Nmap scans, port probing, and suspicious downloads.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">SOLUTION</span>
+                      <span class="cf-field-val">A responsive backend-driven SOC application with port mirroring, IDS/IPS integration, and structured logging that classifies scan attempts and records attacker/target IP and traffic details for incident response.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span>Python / Django</span><span>HTML / CSS / JavaScript</span><span>IDS/IPS Integration</span><span>Port Mirroring</span>
+                  </div>
+                  <div class="cf-actions">
+                    <a href="https://github.com/chris-crts/Netwatch-SOC" target="_blank" class="cf-action-link cf-action-link--live">View Repository &rarr;</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="view-slide">
+              <article class="case-file">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>02</span></div>
+                  <div class="cf-status cf-status--active">COMPLETED</div>
+                  <div class="cf-category">HealthTech &bull; AI</div>
+                </div>
+                <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/ClinicSys.jpg" alt="AI Clinical Management System"><div class="cf-img-overlay"></div></div></div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">AI-Powered Clinical Management System</h3>
+                    <p class="cf-subtitle">Semantic Search · RAG Chatbot · Medicine Recommendation · EHR</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Streamlines appointment scheduling, electronic health records, and medicine inventory while assisting clinicians through AI-powered semantic retrieval and contextual decision support.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">SEMANTIC + RAG ENGINE</span>
+                      <span class="cf-field-val">BioBERT embeddings indexed with Annoy for fast similarity search, paired with a BioGPT RAG chatbot that answers patient-specific questions using retrieved clinical context.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span>Django</span><span>Python</span><span>PostgreSQL</span><span>BioBERT</span><span>BioGPT</span><span>RAG</span><span>Vector Search</span><span>RBAC</span>
+                  </div>
+                  <div class="cf-actions">
+                    <a href="./404.html?resource=private-repository" class="cf-action-link">View Repository &rarr;</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="view-slide">
+              <article class="case-file">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>03</span></div>
+                  <div class="cf-status cf-status--active">LIVE</div>
+                  <div class="cf-category">4th Year Capstone</div>
+                </div>
+                <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/invoicing.png" alt="E-Invoicing System"><div class="cf-img-overlay"></div></div></div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">E-Invoicing &amp; Verification System</h3>
+                    <p class="cf-subtitle">Invoice Creation · QR Verification · Immutable Records</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Generate, share, negotiate, and finalize professional invoices for non-VAT transactions without registration.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">SOLUTION</span>
+                      <span class="cf-field-val">QR code verification backed by a tamper-evident audit trail and built-in encryption logic.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip">
+                    <span>HTML / CSS / JS</span><span>Django</span><span>RESTful API</span><span>PostgreSQL</span><span>reportlab</span>
+                  </div>
+                  <div class="cf-actions">
+                    <a href="https://nontaxinvoiceproof.pythonanywhere.com/" target="_blank" class="cf-action-link cf-action-link--live">Try It Now &rarr;</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="view-slide">
+              <article class="case-file">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>04</span></div>
+                  <div class="cf-status cf-status--active">LIVE</div>
+                  <div class="cf-category">Promotional Project</div>
+                </div>
+                <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/beaupro.png" alt="BeaPro Beauty Studio Website Concept"><div class="cf-img-overlay"></div></div></div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">BeaPro Beauty Studio Website Concept</h3>
+                    <p class="cf-subtitle">Cinematic Landing · Interactive Showcases · Luxury-Inspired Design</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">A modern, editorial-style promotional concept highlighting elegance, quality, and immersive digital experiences.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">SOLUTION</span>
+                      <span class="cf-field-val">A responsive web design featuring modern visuals to promote BeauPro - Beauty Studio.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip"><span>HTML / CSS / JavaScript</span><span>Netlify Deployment</span></div>
+                  <div class="cf-actions">
+                    <a href="https://beaupro-studio-masbate.netlify.app/" target="_blank" class="cf-action-link cf-action-link--live">View Live Demo &rarr;</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="view-slide">
+              <article class="case-file">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>05</span></div>
+                  <div class="cf-status cf-status--active">LIVE</div>
+                  <div class="cf-category">Promotional Project</div>
+                </div>
+                <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/rolex.png" alt="Rolex Luxury Collection Showcase"><div class="cf-img-overlay"></div></div></div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">Rolex Luxury Collection</h3>
+                    <p class="cf-subtitle">Submariner · Daytona · GMT&#8209;Master II</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">SUBMARINER</span>
+                      <span class="cf-field-val">$10,100 · Prestige 90% · Timeless sports watch emphasizing water resistance and enduring prestige.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">DAYTONA</span>
+                      <span class="cf-field-val">$14,550 · Prestige 97% · Iconic racing chronograph with unrivaled investment value.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip"><span>HTML / CSS / JavaScript</span><span>Netlify Deployment</span></div>
+                  <div class="cf-actions">
+                    <a href="https://rolex-showcase.netlify.app/" target="_blank" class="cf-action-link cf-action-link--live">View Live Demo &rarr;</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="view-slide">
+              <article class="case-file">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>06</span></div>
+                  <div class="cf-status cf-status--active">LIVE</div>
+                  <div class="cf-category">Web Dev.</div>
+                </div>
+                <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/oc.jpg" alt="School Webpage"><div class="cf-img-overlay"></div></div></div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">School Documentary Webpage</h3>
+                    <p class="cf-subtitle">Promotional &amp; Informational Platform</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Showcase academic programs, institutional values, and legacy of Osmena Colleges.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">APPROACH</span>
+                      <span class="cf-field-val">Pure HTML, CSS, and JavaScript for maximum performance with no dependencies.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                  <div class="cf-actions">
+                    <a href="https://osmena-colleges.netlify.app/" target="_blank" class="cf-action-link">Open Blueprint &rarr;</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="view-slide">
+              <article class="case-file">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>07</span></div>
+                  <div class="cf-status cf-status--active">COMPLETED</div>
+                  <div class="cf-category">Civic Tech.</div>
+                </div>
+                <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/votingsystem.png" alt="Voting System"><div class="cf-img-overlay"></div></div></div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">School Class Voting System</h3>
+                    <p class="cf-subtitle">Secure Election Platform</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Guide students through Nominate, Campaign, Vote, and Results phases with Student ID authentication.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">SOLUTION</span>
+                      <span class="cf-field-val">Password-protected Admin Panel for faculty to manage each election phase securely.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Hono.js</span><span>PostgreSQL</span></div>
+                  <div class="cf-actions">
+                    <a href="./404.html?resource=private-repository" class="cf-action-link">View Repository &rarr;</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="view-slide">
+              <article class="case-file">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>08</span></div>
+                  <div class="cf-status cf-status--active">COMPLETED</div>
+                  <div class="cf-category">Social Platform</div>
+                </div>
+                <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/sc.png" alt="Social Media App"><div class="cf-img-overlay"></div></div></div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">Social Media Web Application</h3>
+                    <p class="cf-subtitle">Private Messaging &amp; Community Features</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Interactive social platform with private messaging, customizable profiles, and friend management.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">FEATURES</span>
+                      <span class="cf-field-val">Advanced search, photo/video posting, reactions and comments system.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip"><span>HTML / CSS / JS</span><span>Django</span><span>PostgreSQL</span></div>
+                  <div class="cf-actions">
+                    <a href="./404.html?resource=private-repository" class="cf-action-link">View Repository &rarr;</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="view-slide">
+              <article class="case-file">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>09</span></div>
+                  <div class="cf-status cf-status--active">COMPLETED</div>
+                  <div class="cf-category">Mobile &middot; AI</div>
+                </div>
+                <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/ai.png" alt="AI Mobile App"><div class="cf-img-overlay"></div></div></div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">AI Mobile Application</h3>
+                    <p class="cf-subtitle">Natural Language Processing Interface</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Mobile application leveraging OpenAI's API for natural language interactions.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">ARCHITECTURE</span>
+                      <span class="cf-field-val">React Native frontend paired with Django backend for a seamless conversational experience.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip"><span>React Native</span><span>Django</span><span>SQLite</span><span>OpenAI API</span></div>
+                  <div class="cf-actions">
+                    <a href="https://github.com/Wawayooo/Ai_Search" target="_blank" class="cf-action-link cf-action-link--live">Source Code &rarr;</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="view-slide">
+              <article class="case-file">
+                <div class="cf-sidebar">
+                  <div class="cf-file-num">CASE FILE <span>10</span></div>
+                  <div class="cf-status cf-status--active">OPEN SOURCE</div>
+                  <div class="cf-category">Desktop App.</div>
+                </div>
+                <div class="cf-img-col"><div class="cf-img-frame"><img src="./media/kali.png" alt="LMS Desktop"><div class="cf-img-overlay"></div></div></div>
+                <div class="cf-body">
+                  <div class="cf-title-block">
+                    <h3 class="cf-title">Learning Management System</h3>
+                    <p class="cf-subtitle">Desktop LMS with Interactive Quizzes</p>
+                  </div>
+                  <div class="cf-field-grid">
+                    <div class="cf-field">
+                      <span class="cf-field-label">OBJECTIVE</span>
+                      <span class="cf-field-val">Feature-rich desktop LMS with PDF delivery, full-text search, and interactive quizzes.</span>
+                    </div>
+                    <div class="cf-field">
+                      <span class="cf-field-label">FEATURES</span>
+                      <span class="cf-field-val">Comprehensive course and student management for administrators. University of Kali Linux themed.</span>
+                    </div>
+                  </div>
+                  <div class="cf-tech-strip"><span>Visual Basic</span><span>XAMPP MySQL</span></div>
+                  <div class="cf-actions">
+                    <a href="https://fb.watch/tfkpDjXMXF/" target="_blank" class="cf-action-link cf-action-link--live">Watch Demo &rarr;</a>
+                    <a href="https://github.com/Wawayooo/University-of-Kali-Linux-Certification-System" target="_blank" class="cf-action-link cf-action-link--live">Source Code &rarr;</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+          </div>
+
+          <div class="view-carousel-controls view-carousel-controls--dark">
+            <button class="view-carousel-arrow view-carousel-arrow--light" type="button" data-vc-prev aria-label="Previous project">&#8592;</button>
+            <div class="view-carousel-counter view-carousel-counter--light" data-vc-counter></div>
+            <button class="view-carousel-arrow view-carousel-arrow--light" type="button" data-vc-next aria-label="Next project">&#8594;</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <nav class="app-bottomnav" aria-label="Primary navigation">
+      <button class="bottomnav-item" type="button" data-view="profile" aria-label="Profile">
+        <span class="bottomnav-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></span>
+        <span class="bottomnav-text">Profile</span>
+      </button>
+      <button class="bottomnav-item" type="button" data-view="workshop" aria-label="Workshop">
+        <span class="bottomnav-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.4" height="6.4" rx="1.3"/><rect x="13.6" y="4" width="6.4" height="6.4" rx="1.3"/><rect x="4" y="13.6" width="6.4" height="6.4" rx="1.3"/><rect x="13.6" y="13.6" width="6.4" height="6.4" rx="1.3"/></svg></span>
+        <span class="bottomnav-text">Workshop</span>
+      </button>
+      <button class="bottomnav-item" type="button" data-view="blueprint-archive" aria-label="Blueprint Archive">
+        <span class="bottomnav-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.6a2 2 0 0 1 2-2h3.5l1.8 2.2H19a2 2 0 0 1 2 2v7.2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+        <span class="bottomnav-text">Archive</span>
+      </button>
+    </nav>
 
   </div>
+</div>
 
-  <script src="logic.js"></script>
+<script src="logic.js"></script>
 </body>
-
 </html>
