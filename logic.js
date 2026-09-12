@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   const root = document.documentElement;
-  const lampToggle = document.getElementById("lampToggle");
-  const lampLabel = document.getElementById("lampLabel");
+  const themeToggles = document.querySelectorAll(".theme-toggle");
   const loaderStatus = document.getElementById("loaderStatus");
+  const sunIcon =
+    '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+  const moonIcon =
+    '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/>';
 
   const loaderMessages = [
     "Opening Drafting Room...",
@@ -27,57 +30,162 @@ document.addEventListener("DOMContentLoaded", function () {
     if (loader) loader.remove();
   }, 5500);
 
-  const savedTheme = localStorage.getItem("draftingRoomTheme") || "light";
-  root.setAttribute("data-theme", savedTheme);
-  updateLampLabel(savedTheme);
-
-  if (lampToggle) {
-    lampToggle.addEventListener("click", function () {
-      const current = root.getAttribute("data-theme");
-      const next = current === "light" ? "dark" : "light";
-      root.setAttribute("data-theme", next);
-      localStorage.setItem("draftingRoomTheme", next);
-      updateLampLabel(next);
-    });
-  }
-
-  function updateLampLabel(theme) {
-    if (lampLabel)
-      lampLabel.textContent = theme === "light" ? "Lamp On" : "Lamp Off";
-  }
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   const mediaQueryReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   );
 
-  function animateCounters(scope) {
-    scope.querySelectorAll(".ledger-num").forEach(function (el) {
-      const target = parseInt(el.getAttribute("data-target"), 10);
-      let n = 0;
-      const step = Math.max(1, Math.ceil(target / 30));
-      const tick = setInterval(function () {
-        n = Math.min(n + step, target);
-        el.textContent = n;
-        if (n >= target) clearInterval(tick);
-      }, 50);
+  function applyTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem("draftingRoomTheme", theme);
+  }
+
+  function spawnIconSparks(container, theme) {
+    if (!container || prefersReducedMotion) return;
+    const color = theme === "light" ? "var(--accent)" : "var(--accent-light)";
+    const count = 6;
+    for (let i = 0; i < count; i++) {
+      const spark = document.createElement("span");
+      spark.className = "icon-spark";
+      spark.style.setProperty("--ang", (360 / count) * i + "deg");
+      spark.style.setProperty("--dist", theme === "light" ? "20px" : "16px");
+      spark.style.background = color;
+      container.appendChild(spark);
+      spark.addEventListener("animationend", function () {
+        spark.remove();
+      });
+    }
+  }
+
+  function updateThemeToggles(theme, opts) {
+    opts = opts || {};
+    themeToggles.forEach(function (toggle) {
+      const iconWrap = toggle.querySelector(".lamp-icon");
+      const svg = toggle.querySelector(".theme-toggle-svg");
+      const label = toggle.querySelector(".lamp-label");
+      const nextMarkup = theme === "light" ? sunIcon : moonIcon;
+
+      if (opts.animate && svg && !prefersReducedMotion) {
+        svg.classList.remove("icon-in");
+        svg.classList.add("icon-out");
+        spawnIconSparks(iconWrap, theme);
+
+        setTimeout(function () {
+          svg.innerHTML = nextMarkup;
+          svg.classList.remove("icon-out");
+          svg.classList.add("icon-in");
+          svg.addEventListener(
+            "animationend",
+            function () {
+              svg.classList.remove("icon-in");
+            },
+            { once: true },
+          );
+        }, 150);
+      } else if (svg) {
+        svg.innerHTML = nextMarkup;
+      }
+
+      if (label) label.textContent = theme === "light" ? "Light" : "Dark";
     });
   }
 
-  // =============================================
-  // GENERIC VIEW CAROUSEL ENGINE (per-section pagination)
-  // =============================================
-  // Each .view-carousel has a .view-carousel-viewport containing
-  // .view-slide children. Slides page horizontally via scroll-snap;
-  // this controller drives arrows/dots/counter and keeps them synced.
+  function spawnThemeRing(x, y) {
+    const ring = document.createElement("div");
+    ring.className = "theme-pulse-ring";
+    ring.style.left = x + "px";
+    ring.style.top = y + "px";
+    document.body.appendChild(ring);
+    ring.addEventListener("animationend", function () {
+      ring.remove();
+    });
+  }
+
+  const savedTheme = localStorage.getItem("draftingRoomTheme") || "light";
+  applyTheme(savedTheme);
+  updateThemeToggles(savedTheme);
+
+  themeToggles.forEach(function (toggle) {
+    toggle.addEventListener("click", function () {
+      const next =
+        root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      const rect = toggle.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+
+      root.style.setProperty("--theme-x", x + "px");
+      root.style.setProperty("--theme-y", y + "px");
+      spawnThemeRing(x, y);
+      updateThemeToggles(next, { animate: true });
+
+      if (document.startViewTransition && !prefersReducedMotion) {
+        document.startViewTransition(function () {
+          applyTheme(next);
+        });
+      } else {
+        applyTheme(next);
+      }
+    });
+  });
 
   const viewCarousels = [];
+
+  const fbTabs = document.querySelectorAll(".fb-tab");
+  const fbFeed = document.querySelector(".fb-feed");
+
+  if (fbTabs.length && fbFeed) {
+    const fbCards = Array.prototype.map.call(fbTabs, function (tab) {
+      return document.getElementById(tab.getAttribute("data-fb-target"));
+    });
+
+    var setActiveTab = function (id) {
+      fbTabs.forEach(function (tab) {
+        tab.classList.toggle(
+          "is-active",
+          tab.getAttribute("data-fb-target") === id,
+        );
+      });
+    };
+
+    fbTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        const target = document.getElementById(
+          tab.getAttribute("data-fb-target"),
+        );
+        if (!target) return;
+        target.scrollIntoView({
+          behavior: mediaQueryReducedMotion.matches ? "auto" : "smooth",
+          block: "start",
+        });
+        setActiveTab(tab.getAttribute("data-fb-target"));
+      });
+    });
+
+    const scrollRoot = document.querySelector("#profile .fb-profile");
+    const spyObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) setActiveTab(entry.target.id);
+        });
+      },
+      {
+        root: scrollRoot || null,
+        rootMargin: "-53px 0px -70% 0px",
+        threshold: 0,
+      },
+    );
+    fbCards.forEach(function (card) {
+      if (card) spyObserver.observe(card);
+    });
+  }
 
   document.querySelectorAll(".view-carousel").forEach(function (carousel) {
     const viewport = carousel.querySelector(".view-carousel-viewport");
     const slides = Array.prototype.slice.call(
-      carousel.querySelectorAll(
-        ".view-slide:not(.cf-traceforge-capabilities):not(.dossier-legacy)",
-      ),
+      carousel.querySelectorAll(".view-slide:not(.cf-traceforge-capabilities)"),
     );
     if (!viewport || slides.length === 0) return;
 
@@ -188,12 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // =============================================
-  // APP SHELL — VIEW SWITCHING
-  // =============================================
-
   const appShell = document.getElementById("appShell");
-  const appMain = document.getElementById("appMain");
   const views = Array.prototype.slice.call(
     document.querySelectorAll(".app-view"),
   );
@@ -207,11 +310,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidebarHandle = document.getElementById("sidebarHandle");
 
   const DEFAULT_VIEW = viewIds.includes("blueprint-archive")
-    ? "blueprint-archive"
+    ? "profile"
     : viewIds[0];
 
   let currentView = null;
-  let hasAnimatedCounters = false;
 
   function labelFor(id) {
     const btn = navButtons.find(function (b) {
@@ -245,18 +347,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const activeView = document.getElementById(id);
     if (activeView) {
-      // Reset any carousels inside this view to their first slide so
-      // returning to a section always starts from the beginning.
       viewCarousels.forEach(function (vc) {
         if (activeView.contains(vc.carousel)) vc.reset();
       });
-
-      if (id === "front-page" && !hasAnimatedCounters) {
-        hasAnimatedCounters = true;
-        setTimeout(function () {
-          animateCounters(activeView);
-        }, 200);
-      }
     }
 
     if (opts.updateHash !== false) {
@@ -282,10 +375,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const initialId = location.hash.replace("#", "") || DEFAULT_VIEW;
   showView(initialId, { updateHash: false });
 
-  // =============================================
-  // SIDEBAR COLLAPSE (desktop ruler-tab handle)
-  // =============================================
-
   if (sidebarHandle && appShell) {
     const savedCollapsed =
       localStorage.getItem("draftingRoomSidebarCollapsed") === "true";
@@ -299,10 +388,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-
-  // =============================================
-  // CASE FILE IMAGE CAROUSEL (e.g. TraceForge screenshots)
-  // =============================================
 
   document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
     const name = carousel.getAttribute("data-carousel");
@@ -397,8 +482,6 @@ document.addEventListener("DOMContentLoaded", function () {
     startAuto();
   });
 
-  // Technology marks use Simple Icons' CDN. Brand names stay as text, so the
-  // visual marks remain decorative and do not reduce accessibility.
   const toolIconSlugs = {
     "React & React-Native": "react",
     HTML: "html5",
