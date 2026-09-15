@@ -345,38 +345,53 @@ function updateThemeToggles(theme, opts) {
     return labelEl ? labelEl.textContent : "";
   }
 
-  function showView(id, opts) {
-    opts = opts || {};
-    if (!viewIds.includes(id)) id = DEFAULT_VIEW;
-    if (id === currentView && !opts.force) return;
+function showView(id, opts) {
+  opts = opts || {};
 
-    views.forEach(function (v) {
-      const active = v.id === id;
-      v.classList.toggle("is-active", active);
-      v.setAttribute("aria-hidden", active ? "false" : "true");
-    });
+  if (!viewIds.includes(id)) id = DEFAULT_VIEW;
+  if (id === currentView && !opts.force) return;
 
-    navButtons.forEach(function (b) {
-      const isMatch = b.getAttribute("data-view") === id;
-      b.classList.toggle("is-active", isMatch);
-      b.setAttribute("aria-current", isMatch ? "page" : "false");
-    });
+  views.forEach(function (v) {
+    const active = v.id === id;
 
-    if (topbarViewTitle) topbarViewTitle.textContent = labelFor(id);
+    v.classList.toggle("is-active", active);
+    v.setAttribute("aria-hidden", active ? "false" : "true");
+  });
 
-    currentView = id;
+  navButtons.forEach(function (b) {
+    const isMatch = b.getAttribute("data-view") === id;
 
-    const activeView = document.getElementById(id);
-    if (activeView) {
-      viewCarousels.forEach(function (vc) {
-        if (activeView.contains(vc.carousel)) vc.reset();
-      });
-    }
+    b.classList.toggle("is-active", isMatch);
+    b.setAttribute("aria-current", isMatch ? "page" : "false");
+  });
 
-    if (opts.updateHash !== false) {
-      history.pushState({ view: id }, "", "#" + id);
-    }
+  // Keep the document-level UI state synchronized.
+  root.setAttribute("data-view", id);
+
+  if (topbarViewTitle) {
+    topbarViewTitle.textContent = labelFor(id);
   }
+
+  currentView = id;
+
+  const activeView = document.getElementById(id);
+
+  if (activeView) {
+    viewCarousels.forEach(function (vc) {
+      if (activeView.contains(vc.carousel)) {
+        vc.reset();
+      }
+    });
+  }
+
+  if (opts.updateHash !== false) {
+    history.pushState(
+      { view: id },
+      "",
+      "#" + id,
+    );
+  }
+}
 
   navButtons.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
@@ -393,8 +408,13 @@ function updateThemeToggles(theme, opts) {
     showView(id, { updateHash: false });
   });
 
-  const initialId = location.hash.replace("#", "") || DEFAULT_VIEW;
-  showView(initialId, { updateHash: false });
+const initialId =
+  location.hash.replace("#", "") || DEFAULT_VIEW;
+
+showView(initialId, {
+  updateHash: false,
+  force: true,
+});
 
   if (sidebarHandle && appShell) {
     const savedCollapsed =
