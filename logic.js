@@ -60,38 +60,59 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function updateThemeToggles(theme, opts) {
-    opts = opts || {};
-    themeToggles.forEach(function (toggle) {
-      const iconWrap = toggle.querySelector(".lamp-icon");
-      const svg = toggle.querySelector(".theme-toggle-svg");
-      const label = toggle.querySelector(".lamp-label");
-      const nextMarkup = theme === "light" ? sunIcon : moonIcon;
+function updateThemeToggles(theme, opts) {
+  opts = opts || {};
 
-      if (opts.animate && svg && !prefersReducedMotion) {
-        svg.classList.remove("icon-in");
-        svg.classList.add("icon-out");
-        spawnIconSparks(iconWrap, theme);
+  themeToggles.forEach(function (toggle) {
+    const iconWrap = toggle.querySelector(".lamp-icon");
+    const svg = toggle.querySelector(".theme-toggle-svg");
+    const label = toggle.querySelector(".lamp-label");
 
-        setTimeout(function () {
-          svg.innerHTML = nextMarkup;
-          svg.classList.remove("icon-out");
-          svg.classList.add("icon-in");
-          svg.addEventListener(
-            "animationend",
-            function () {
-              svg.classList.remove("icon-in");
-            },
-            { once: true },
-          );
-        }, 150);
-      } else if (svg) {
+    const nextMarkup =
+      theme === "light" ? sunIcon : moonIcon;
+
+    const nextTheme =
+      theme === "light" ? "dark" : "light";
+
+    if (opts.animate && svg && !prefersReducedMotion) {
+      svg.classList.remove("icon-in");
+      svg.classList.add("icon-out");
+
+      spawnIconSparks(iconWrap, theme);
+
+      setTimeout(function () {
         svg.innerHTML = nextMarkup;
-      }
+        svg.classList.remove("icon-out");
+        svg.classList.add("icon-in");
 
-      if (label) label.textContent = theme === "light" ? "Light" : "Dark";
-    });
-  }
+        svg.addEventListener(
+          "animationend",
+          function () {
+            svg.classList.remove("icon-in");
+          },
+          { once: true },
+        );
+      }, 150);
+    } else if (svg) {
+      svg.innerHTML = nextMarkup;
+    }
+
+    if (label) {
+      label.textContent =
+        theme === "light" ? "Light" : "Dark";
+    }
+
+    toggle.setAttribute(
+      "aria-label",
+      "Switch to " + nextTheme + " theme",
+    );
+
+    toggle.setAttribute(
+      "data-theme-state",
+      theme,
+    );
+  });
+}
 
   function spawnThemeRing(x, y) {
     const ring = document.createElement("div");

@@ -998,6 +998,25 @@ button{font:inherit;color:inherit}
   .theme-pulse-ring{ display:none; }
 }
 
+.theme-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  border: 0;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.theme-toggle:active .lamp-icon {
+  transform: scale(.96);
+}
+
 /* ---- Icon flip + spark burst on theme toggle ---- */
 .theme-toggle .lamp-icon{
   position: relative;
