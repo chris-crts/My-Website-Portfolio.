@@ -60,38 +60,59 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function updateThemeToggles(theme, opts) {
-    opts = opts || {};
-    themeToggles.forEach(function (toggle) {
-      const iconWrap = toggle.querySelector(".lamp-icon");
-      const svg = toggle.querySelector(".theme-toggle-svg");
-      const label = toggle.querySelector(".lamp-label");
-      const nextMarkup = theme === "light" ? sunIcon : moonIcon;
+function updateThemeToggles(theme, opts) {
+  opts = opts || {};
 
-      if (opts.animate && svg && !prefersReducedMotion) {
-        svg.classList.remove("icon-in");
-        svg.classList.add("icon-out");
-        spawnIconSparks(iconWrap, theme);
+  themeToggles.forEach(function (toggle) {
+    const iconWrap = toggle.querySelector(".lamp-icon");
+    const svg = toggle.querySelector(".theme-toggle-svg");
+    const label = toggle.querySelector(".lamp-label");
 
-        setTimeout(function () {
-          svg.innerHTML = nextMarkup;
-          svg.classList.remove("icon-out");
-          svg.classList.add("icon-in");
-          svg.addEventListener(
-            "animationend",
-            function () {
-              svg.classList.remove("icon-in");
-            },
-            { once: true },
-          );
-        }, 150);
-      } else if (svg) {
+    const nextMarkup =
+      theme === "light" ? sunIcon : moonIcon;
+
+    const nextTheme =
+      theme === "light" ? "dark" : "light";
+
+    if (opts.animate && svg && !prefersReducedMotion) {
+      svg.classList.remove("icon-in");
+      svg.classList.add("icon-out");
+
+      spawnIconSparks(iconWrap, theme);
+
+      setTimeout(function () {
         svg.innerHTML = nextMarkup;
-      }
+        svg.classList.remove("icon-out");
+        svg.classList.add("icon-in");
 
-      if (label) label.textContent = theme === "light" ? "Light" : "Dark";
-    });
-  }
+        svg.addEventListener(
+          "animationend",
+          function () {
+            svg.classList.remove("icon-in");
+          },
+          { once: true },
+        );
+      }, 150);
+    } else if (svg) {
+      svg.innerHTML = nextMarkup;
+    }
+
+    if (label) {
+      label.textContent =
+        theme === "light" ? "Light" : "Dark";
+    }
+
+    toggle.setAttribute(
+      "aria-label",
+      "Switch to " + nextTheme + " theme",
+    );
+
+    toggle.setAttribute(
+      "data-theme-state",
+      theme,
+    );
+  });
+}
 
   function spawnThemeRing(x, y) {
     const ring = document.createElement("div");
@@ -324,38 +345,53 @@ document.addEventListener("DOMContentLoaded", function () {
     return labelEl ? labelEl.textContent : "";
   }
 
-  function showView(id, opts) {
-    opts = opts || {};
-    if (!viewIds.includes(id)) id = DEFAULT_VIEW;
-    if (id === currentView && !opts.force) return;
+function showView(id, opts) {
+  opts = opts || {};
 
-    views.forEach(function (v) {
-      const active = v.id === id;
-      v.classList.toggle("is-active", active);
-      v.setAttribute("aria-hidden", active ? "false" : "true");
-    });
+  if (!viewIds.includes(id)) id = DEFAULT_VIEW;
+  if (id === currentView && !opts.force) return;
 
-    navButtons.forEach(function (b) {
-      const isMatch = b.getAttribute("data-view") === id;
-      b.classList.toggle("is-active", isMatch);
-      b.setAttribute("aria-current", isMatch ? "page" : "false");
-    });
+  views.forEach(function (v) {
+    const active = v.id === id;
 
-    if (topbarViewTitle) topbarViewTitle.textContent = labelFor(id);
+    v.classList.toggle("is-active", active);
+    v.setAttribute("aria-hidden", active ? "false" : "true");
+  });
 
-    currentView = id;
+  navButtons.forEach(function (b) {
+    const isMatch = b.getAttribute("data-view") === id;
 
-    const activeView = document.getElementById(id);
-    if (activeView) {
-      viewCarousels.forEach(function (vc) {
-        if (activeView.contains(vc.carousel)) vc.reset();
-      });
-    }
+    b.classList.toggle("is-active", isMatch);
+    b.setAttribute("aria-current", isMatch ? "page" : "false");
+  });
 
-    if (opts.updateHash !== false) {
-      history.pushState({ view: id }, "", "#" + id);
-    }
+  // Keep the document-level UI state synchronized.
+  root.setAttribute("data-view", id);
+
+  if (topbarViewTitle) {
+    topbarViewTitle.textContent = labelFor(id);
   }
+
+  currentView = id;
+
+  const activeView = document.getElementById(id);
+
+  if (activeView) {
+    viewCarousels.forEach(function (vc) {
+      if (activeView.contains(vc.carousel)) {
+        vc.reset();
+      }
+    });
+  }
+
+  if (opts.updateHash !== false) {
+    history.pushState(
+      { view: id },
+      "",
+      "#" + id,
+    );
+  }
+}
 
   navButtons.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
@@ -372,8 +408,13 @@ document.addEventListener("DOMContentLoaded", function () {
     showView(id, { updateHash: false });
   });
 
-  const initialId = location.hash.replace("#", "") || DEFAULT_VIEW;
-  showView(initialId, { updateHash: false });
+const initialId =
+  location.hash.replace("#", "") || DEFAULT_VIEW;
+
+showView(initialId, {
+  updateHash: false,
+  force: true,
+});
 
   if (sidebarHandle && appShell) {
     const savedCollapsed =
